@@ -9,8 +9,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-// import { Avatar, Tooltip } from '@mui/material';
-// import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LoginIcon from '@mui/icons-material/Login';
@@ -58,9 +56,6 @@ function Navbar() {
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
     };
-    // const handleOpenUserMenu = (event) => {
-    //     setAnchorElUser(event.currentTarget);
-    // };
 
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
@@ -80,7 +75,7 @@ function Navbar() {
         <AppBar position="fixed" style={appBarStyle} >
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
+
                     <Typography
                         variant="h5"
                         noWrap
@@ -99,7 +94,7 @@ function Navbar() {
                             }
                         }}
                     >
-                        Matt Ali Bugucam
+                        Cashflow Skills
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, }}>
@@ -143,7 +138,7 @@ function Navbar() {
                             </MenuItem>}
                         </Menu>
                     </Box>
-                    {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
+
                     <Typography
                         variant="h5"
                         noWrap
@@ -167,7 +162,7 @@ function Navbar() {
                             }
                         }}
                     >
-                        Matt Ali Bugucam
+                        Cashflow Skills
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, paddingLeft: '10%' }}>
                         {pages.map((page) => (
@@ -179,9 +174,7 @@ function Navbar() {
                                 <Link style={{ textDecoration: 'none', color: 'white', fontWeight: '700' }} to={`/${page}`}>{page}</Link>
                             </Button>
                         ))}
-                        {/* {user && <Button>
-                            <Link style={{ textDecoration: 'none', color: 'white', fontWeight: '700' }} to='/account'>Blog</Link>
-                        </Button>} */}
+
                         <Button>
                             <Link style={{ textDecoration: 'none', color: 'white', fontWeight: '700' }} to='/account'>Blog</Link>
                         </Button>
