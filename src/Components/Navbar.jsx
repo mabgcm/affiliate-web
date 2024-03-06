@@ -19,7 +19,7 @@ import { Avatar } from '@mui/material';
 import { useEffect } from 'react';
 
 const pages = ['Resume', 'Portfolio', 'Contact'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+// const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 
 function Navbar() {
