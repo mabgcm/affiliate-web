@@ -75,17 +75,17 @@ const Blogpost = () => {
                                         <figcaption>{article.caption1}</figcaption>
                                     </figure>
                                     <p><span className="firstcharacter">{article.parag1[0]}</span>{article.parag1.slice(1)}</p>
-                                    <p>{article.parag2}</p>
+                                    <h2>{article.parag2}</h2>
                                     <p>{article.parag3}</p>
-                                    <p>{article.parag4}</p>
+                                    <h2>{article.parag4}</h2>
                                     <p>{article.parag5}</p>
-                                    <p>{article.parag6}</p>
+                                    <h2>{article.parag6}</h2>
                                     <p>{article.parag7}</p>
-                                    <p>{article.parag8}</p>
+                                    <h2>{article.parag8}</h2>
                                     <p>{article.parag9}</p>
-                                    <p>{article.parag10}</p>
+                                    <h2>{article.parag10}</h2>
                                     <p>{article.parag11}</p>
-                                    <p>{article.parag12}</p>
+                                    <h2>{article.parag12}</h2>
                                     <p>{article.parag13}</p>
                                 </div>
 
