@@ -9,6 +9,7 @@ import RecentPost from '../Components/RecentPost';
 import Posts from '../Components/Posts';
 import Posts2 from '../Components/Posts2';
 import Filter from '../Components/Filter';
+import { UserAuth } from '../context/AuthContext';
 
 const Account = () => {
 
@@ -37,6 +38,8 @@ const Account = () => {
         "Web Development",
     ];
 
+    const { user } = UserAuth();
+
     const [blogposts, setBlogposts] = useState([]);
 
     useEffect(() => {
@@ -61,28 +64,32 @@ const Account = () => {
 
     return (
         <div className='row account mt-5'>
-            <Box sx={{
-                position: 'fixed',
-                bottom: 10,
-                right: '1%',
-                transform: 'translateZ(0px)',
-                zIndex: 1,
-            }}
-                className='speed-dial'>
-                <Link to='/addblog'><SpeedDial
-                    ariaLabel="Create a blogpost"
-                    sx={{
-                        position: 'absolute',
-                        bottom: 10,
-                        right: 15,
-                        '& .MuiFab-primary': {
-                            backgroundColor: 'black',
-                            '&:hover': { backgroundColor: 'black' }
-                        }
-                    }}
-                    icon={<SpeedDialIcon />}>
-                </SpeedDial></Link>
-            </Box>
+
+            {user && user.email === 'bugucam@gmail.com' && (
+                <Box sx={{
+                    position: 'fixed',
+                    bottom: 10,
+                    right: '1%',
+                    transform: 'translateZ(0px)',
+                    zIndex: 1,
+                }}
+                    className='speed-dial'>
+                    <Link to='/addblog'><SpeedDial
+                        ariaLabel="Create a blogpost"
+                        sx={{
+                            position: 'absolute',
+                            bottom: 10,
+                            right: 15,
+                            '& .MuiFab-primary': {
+                                backgroundColor: 'black',
+                                '&:hover': { backgroundColor: 'black' }
+                            }
+                        }}
+                        icon={<SpeedDialIcon />}>
+                    </SpeedDial></Link>
+                </Box>
+            )}
+
             <main id="main position-absolute top-0">
                 <section id="posts" className="posts">
                     <div className="container" data-aos="fade-up">
