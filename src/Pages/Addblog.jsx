@@ -15,7 +15,7 @@ import { useNavigate } from 'react-router';
 const initialState = {
     title: "",
     category: "",
-    paragraphs: [{ text: "", image: "", caption: "", subheading: "" }],
+    paragraphs: [{ text: "", image: "", caption: "", subheading: "", link: "" }],
 };
 
 const categoryOption = [
@@ -79,7 +79,7 @@ const Addblog = () => {
     const addParagraph = () => {
         setForm({
             ...form,
-            paragraphs: [...paragraphs, { text: "", image: "", caption: "", subheading: "" }]
+            paragraphs: [...paragraphs, { text: "", image: "", caption: "", subheading: "", link: "" }]
         });
     };
 
@@ -128,7 +128,7 @@ const Addblog = () => {
                                     name="title"
                                     label="Your Main Title"
                                     value={title}
-                                    onChange={(e) => handleChange(e)} // Adjusted for consistency
+                                    onChange={(e) => handleChange(e)}
                                     placeholder="Enter the main title here.."
                                 />
                                 <FormControl sx={{ width: '90%' }}>
@@ -176,6 +176,14 @@ const Addblog = () => {
                                             value={para.image}
                                             onChange={(e) => handleChange(e, index)}
                                             placeholder="Paste your photo link here.."
+                                        />
+                                        <TextField
+                                            id={`link${index}`}
+                                            name="link"
+                                            label={`Link for Photo ${index + 1}`}
+                                            value={para.link}
+                                            onChange={(e) => handleChange(e, index)}
+                                            placeholder="Enter the link for the photo here.."
                                         />
                                         <TextField
                                             id={`caption${index}`}

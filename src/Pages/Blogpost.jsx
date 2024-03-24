@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../assets/css/main.css';
 import '../assets/css/variables.css';
 import CircleIcon from '@mui/icons-material/Circle';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { UserAuth } from '../context/AuthContext';
 import { doc, onSnapshot } from 'firebase/firestore';
 import { db } from "../firebase";
@@ -35,7 +35,14 @@ const Blogpost = () => {
                                     {/* Render the first image at the top if it exists */}
                                     {article.paragraphs[0].image && (
                                         <figure className="my-4">
-                                            <img src={article.paragraphs[0].image} alt="" className="img-fluid" />
+                                            {/* Ensure that the link property exists and is not empty */}
+                                            {article.paragraphs[0].link ? (
+                                                <a href={article.paragraphs[0].link} target="_blank" rel="noopener noreferrer">
+                                                    <img src={article.paragraphs[0].image} alt="" className="img-fluid" />
+                                                </a>
+                                            ) : (
+                                                <img src={article.paragraphs[0].image} alt="" className="img-fluid" />
+                                            )}
                                         </figure>
                                     )}
                                     <div className="d-flex">
@@ -63,7 +70,14 @@ const Blogpost = () => {
                                             <p>{para.text}</p>
                                             {index !== 0 && para.image && (
                                                 <figure className="my-4">
-                                                    <img src={para.image} alt="" className="img-fluid" />
+                                                    {/* Ensure that the link property exists and is not empty */}
+                                                    {para.link ? (
+                                                        <a href={para.link} target="_blank" rel="noopener noreferrer">
+                                                            <img src={para.image} alt="" className="img-fluid" />
+                                                        </a>
+                                                    ) : (
+                                                        <img src={para.image} alt="" className="img-fluid" />
+                                                    )}
                                                     {para.caption && <figcaption>{para.caption}</figcaption>}
                                                 </figure>
                                             )}
