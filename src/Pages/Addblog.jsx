@@ -15,7 +15,7 @@ import { useNavigate } from 'react-router';
 const initialState = {
     title: "",
     category: "",
-    paragraphs: [{ text: "", image: "", caption: "" }],
+    paragraphs: [{ text: "", image: "", caption: "", subheading: "" }],
 };
 
 const categoryOption = [
@@ -43,9 +43,10 @@ const categoryOption = [
     "Web Development",
 ];
 
-const notify = () => toast.success("Blog posted successfully!", {
-    position: toast.POSITION.BOTTOM_RIGHT
-});
+const notify = () =>
+    toast.success("Blog posted successfully!", {
+        position: toast.POSITION.BOTTOM_RIGHT
+    });
 
 const Addblog = () => {
     const user = auth.currentUser;
@@ -55,17 +56,19 @@ const Addblog = () => {
     const { title, category, paragraphs } = form;
 
     const handleChange = (e, index) => {
-        if (e.target.name.startsWith('parag')) {
-            const newParagraphs = [...paragraphs];
-            newParagraphs[index].text = e.target.value;
-            setForm({ ...form, paragraphs: newParagraphs });
-        } else if (e.target.name.startsWith('image') || e.target.name.startsWith('caption')) {
-            const newParagraphs = [...paragraphs];
-            const field = e.target.name.startsWith('image') ? 'image' : 'caption';
-            newParagraphs[index][field] = e.target.value;
-            setForm({ ...form, paragraphs: newParagraphs });
+        const { name, value } = e.target;
+        if (name === "title") {
+            setForm({ ...form, title: value });
+        } else if (name === "category") {
+            setForm({ ...form, category: value });
         } else {
-            setForm({ ...form, [e.target.name]: e.target.value });
+            const updatedParagraphs = paragraphs.map((paragraph, idx) => {
+                if (idx === index) {
+                    return { ...paragraph, [name]: value };
+                }
+                return paragraph;
+            });
+            setForm({ ...form, paragraphs: updatedParagraphs });
         }
     };
 
@@ -76,7 +79,7 @@ const Addblog = () => {
     const addParagraph = () => {
         setForm({
             ...form,
-            paragraphs: [...paragraphs, { text: "", image: "", caption: "" }]
+            paragraphs: [...paragraphs, { text: "", image: "", caption: "", subheading: "" }]
         });
     };
 
@@ -108,6 +111,7 @@ const Addblog = () => {
 
                 <div className="col-8 m-auto">
                     <Paper elevation={3} className='paper-post pb-3 pt-3 px-2'>
+
                         <Box
                             component="form"
                             sx={{
@@ -124,7 +128,7 @@ const Addblog = () => {
                                     name="title"
                                     label="Your Main Title"
                                     value={title}
-                                    onChange={handleChange}
+                                    onChange={(e) => handleChange(e)} // Adjusted for consistency
                                     placeholder="Enter the main title here.."
                                 />
                                 <FormControl sx={{ width: '90%' }}>
@@ -145,9 +149,19 @@ const Addblog = () => {
                                 </FormControl>
                                 {paragraphs.map((para, index) => (
                                     <div key={index} className='pt-2'>
+                                        {index !== 0 && (
+                                            <TextField
+                                                id={`subheading${index}`}
+                                                name="subheading"
+                                                label={`Subheading for Paragraph ${index + 1}`}
+                                                value={para.subheading}
+                                                onChange={(e) => handleChange(e, index)}
+                                                placeholder="Enter your subheading here.."
+                                            />
+                                        )}
                                         <TextField
                                             id={`parag${index}`}
-                                            name={`parag${index}`}
+                                            name="text"
                                             label={`Paragraph ${index + 1}`}
                                             value={para.text}
                                             onChange={(e) => handleChange(e, index)}
@@ -157,7 +171,7 @@ const Addblog = () => {
                                         />
                                         <TextField
                                             id={`image${index}`}
-                                            name={`image${index}`}
+                                            name="image"
                                             label={`Photo ${index + 1} link`}
                                             value={para.image}
                                             onChange={(e) => handleChange(e, index)}
@@ -165,7 +179,7 @@ const Addblog = () => {
                                         />
                                         <TextField
                                             id={`caption${index}`}
-                                            name={`caption${index}`}
+                                            name="caption"
                                             label={`Caption for Photo ${index + 1}`}
                                             value={para.caption}
                                             onChange={(e) => handleChange(e, index)}

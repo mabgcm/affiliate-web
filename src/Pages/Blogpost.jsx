@@ -4,7 +4,7 @@ import '../assets/css/variables.css';
 import CircleIcon from '@mui/icons-material/Circle';
 import { Link, useParams } from 'react-router-dom';
 import { UserAuth } from '../context/AuthContext';
-import { doc, onSnapshot, collection, query, where, getDocs } from 'firebase/firestore';
+import { doc, onSnapshot } from 'firebase/firestore';
 import { db } from "../firebase";
 import Comment from '../Components/Comment';
 import Likes from '../Components/Likes';
@@ -12,21 +12,7 @@ import Likes from '../Components/Likes';
 const Blogpost = () => {
     const { id } = useParams();
     const [article, setArticle] = useState(null);
-    const [recommendedArticles, setRecommendedArticles] = useState([]);
-    const [category, setCategory] = useState(null);
     const { user } = UserAuth();
-
-    const getRecommendedArticles = async (category) => {
-        const q = query(collection(db, "blogpost"), where("category", "==", category));
-        const querySnapshot = await getDocs(q);
-        const articles = querySnapshot.docs.map((doc) => ({
-            ...doc.data(),
-            id: doc.id,
-        }));
-        const filteredArticles = articles.filter((article) => article.category == category);
-
-        setRecommendedArticles(filteredArticles);
-    };
 
     useEffect(() => {
         if (id) {
@@ -34,16 +20,9 @@ const Blogpost = () => {
             onSnapshot(docRef, (snapshot) => {
                 const data = snapshot.data();
                 setArticle({ ...data, id: snapshot.id });
-                setCategory(data.category);
             });
         }
     }, [id]);
-
-    useEffect(() => {
-        if (category) {
-            getRecommendedArticles(category);
-        }
-    }, [category]);
 
     return (
         <main id="main">
@@ -53,9 +32,19 @@ const Blogpost = () => {
                         <div className="row">
                             <div className="col-md-9 col-lg-9 post-content">
                                 <div className="single-post">
+                                    {/* Render the first image at the top if it exists */}
+                                    {article.paragraphs[0].image && (
+                                        <figure className="my-4">
+                                            <img src={article.paragraphs[0].image} alt="" className="img-fluid" />
+                                        </figure>
+                                    )}
                                     <div className="d-flex">
                                         <div className="col-10 ">
-                                            <div className="post-meta"><span className="date">{article.category}</span> <span className="mx-1"><CircleIcon fontSize='xsmall' /></span> <span>{new Date(article.timestamp?.toDate()).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: '2-digit' }).toUpperCase()}</span></div>
+                                            <div className="post-meta">
+                                                <span className="date">{article.category}</span>
+                                                <span className="mx-1"><CircleIcon fontSize='xsmall' /></span>
+                                                <span>{new Date(article.timestamp?.toDate()).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: '2-digit' }).toUpperCase()}</span>
+                                            </div>
                                         </div>
                                         <div className="col-2">
                                             <div className=' d-flex'>
@@ -67,18 +56,12 @@ const Blogpost = () => {
                                         </div>
                                     </div>
                                     <h1 className="mb-5">{article.title}</h1>
-                                    {/* Display the first image at the beginning of the post */}
-                                    {article.paragraphs[0].image && (
-                                        <figure className="my-4">
-                                            <img src={article.paragraphs[0].image} alt="" className="img-fluid" />
-                                            {article.paragraphs[0].caption && <figcaption>{article.paragraphs[0].caption}</figcaption>}
-                                        </figure>
-                                    )}
-                                    {/* Display subsequent paragraphs and images */}
+                                    {/* Render the rest of the paragraphs, subheadings, and images */}
                                     {article.paragraphs.map((para, index) => (
                                         <React.Fragment key={index}>
+                                            {index !== 0 && para.subheading && <h2>{para.subheading}</h2>}
                                             <p>{para.text}</p>
-                                            {para.image && index !== 0 && (
+                                            {index !== 0 && para.image && (
                                                 <figure className="my-4">
                                                     <img src={para.image} alt="" className="img-fluid" />
                                                     {para.caption && <figcaption>{para.caption}</figcaption>}
@@ -90,9 +73,6 @@ const Blogpost = () => {
                                 <div className="comments">
                                     <Comment key={article.id} id={article.id} />
                                 </div>
-                            </div>
-                            <div className="col-md-3 col-lg-3">
-                                {/* Recommended articles and other UI elements */}
                             </div>
                         </div>
                     </div>
