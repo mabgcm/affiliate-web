@@ -14,7 +14,8 @@ import { useNavigate } from 'react-router';
 
 const initialState = {
     title: "",
-    category: [],
+    category: "",
+    paragraphs: [{ text: "", image: "", caption: "" }],
 };
 
 const categoryOption = [
@@ -42,38 +43,42 @@ const categoryOption = [
     "Web Development",
 ];
 
-const notify = () =>
-    toast.success("Blog posted successfully!", {
-        position: toast.POSITION.BOTTOM_RIGHT
-    });
+const notify = () => toast.success("Blog posted successfully!", {
+    position: toast.POSITION.BOTTOM_RIGHT
+});
 
 const Addblog = () => {
-
-    const user = auth.currentUser
-
-    // const editorRef = useRef(null);
-    // const log = () => {
-    //     if (editorRef.current) {
-    //         console.log(editorRef.current.getContent());
-    //     }
-    // };
-
-    const [numParagraphs, setNumParagraphs] = useState(1);
-    const [numPhotos, setNumPhotos] = useState(1);
+    const user = auth.currentUser;
     const [form, setForm] = useState(initialState);
     const navigate = useNavigate();
 
-    const { title, category } = form;
+    const { title, category, paragraphs } = form;
 
-
-    const handleChange = (e) => {
-        setForm({ ...form, [e.target.name]: e.target.value });
+    const handleChange = (e, index) => {
+        if (e.target.name.startsWith('parag')) {
+            const newParagraphs = [...paragraphs];
+            newParagraphs[index].text = e.target.value;
+            setForm({ ...form, paragraphs: newParagraphs });
+        } else if (e.target.name.startsWith('image') || e.target.name.startsWith('caption')) {
+            const newParagraphs = [...paragraphs];
+            const field = e.target.name.startsWith('image') ? 'image' : 'caption';
+            newParagraphs[index][field] = e.target.value;
+            setForm({ ...form, paragraphs: newParagraphs });
+        } else {
+            setForm({ ...form, [e.target.name]: e.target.value });
+        }
     };
 
     const onCategoryChange = (e) => {
         setForm({ ...form, category: e.target.value });
     };
 
+    const addParagraph = () => {
+        setForm({
+            ...form,
+            paragraphs: [...paragraphs, { text: "", image: "", caption: "" }]
+        });
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -88,15 +93,12 @@ const Addblog = () => {
                     likes: [],
                     comments: []
                 });
-                // toast.success("Blog posted successfully!");
+                notify();
+                navigate("/account");
             } catch (err) {
                 console.log(err);
             }
-        } else {
-            // return toast.error("Please fill all required fields!");
         }
-
-        navigate("/account");
     };
 
     return (
@@ -106,7 +108,6 @@ const Addblog = () => {
 
                 <div className="col-8 m-auto">
                     <Paper elevation={3} className='paper-post pb-3 pt-3 px-2'>
-
                         <Box
                             component="form"
                             sx={{
@@ -115,7 +116,6 @@ const Addblog = () => {
                             noValidate
                             onSubmit={handleSubmit}
                             autoComplete="off"
-                        // ref={form} onSubmit={sendEmail}
                         >
                             <div>
                                 <TextField
@@ -143,50 +143,41 @@ const Addblog = () => {
                                         ))}
                                     </Select>
                                 </FormControl>
-                                {Array.from({ length: numParagraphs }, (_, i) => (
-                                    <div key={i} className=' pt-2'>
+                                {paragraphs.map((para, index) => (
+                                    <div key={index} className='pt-2'>
                                         <TextField
-                                            id={`parag${i + 1}`}
-                                            name={`parag${i + 1}`}
-                                            label={`Paragraph${i + 1}`}
-                                            // value={`parag${i + 1}`}
-                                            onChange={handleChange}
+                                            id={`parag${index}`}
+                                            name={`parag${index}`}
+                                            label={`Paragraph ${index + 1}`}
+                                            value={para.text}
+                                            onChange={(e) => handleChange(e, index)}
                                             multiline
                                             rows={4}
                                             placeholder="Enter your paragraph here.."
                                         />
-                                    </div>
-                                ))}
-
-                                {Array.from({ length: numPhotos }, (_, i) => (
-                                    <div key={i}>
                                         <TextField
-                                            id={`image${i + 1}`}
-                                            name={`image${i + 1}`}
-                                            label={`Photo${i + 1} link`}
-                                            // value={`image${i + 1}`}
-                                            onChange={handleChange}
+                                            id={`image${index}`}
+                                            name={`image${index}`}
+                                            label={`Photo ${index + 1} link`}
+                                            value={para.image}
+                                            onChange={(e) => handleChange(e, index)}
                                             placeholder="Paste your photo link here.."
                                         />
                                         <TextField
-                                            id={`caption${i + 1}`}
-                                            name={`caption${i + 1}`}
-                                            label={`Add a caption for Photo${i + 1}`}
-                                            // value={`caption${i + 1}`}
-                                            onChange={handleChange}
+                                            id={`caption${index}`}
+                                            name={`caption${index}`}
+                                            label={`Caption for Photo ${index + 1}`}
+                                            value={para.caption}
+                                            onChange={(e) => handleChange(e, index)}
                                             type="text"
-                                            placeholder={`Type your caption for Photo${i + 1} here`}
+                                            placeholder="Type your caption here"
                                         />
                                     </div>
                                 ))}
+                                <button type='button' className='btn btn-secondary m-1' onClick={addParagraph}>Add another paragraph</button>
+                                <button id='signin' onClick={notify} variant="success" type="submit" className='btn btn-success'>Send</button>
+                                <ToastContainer />
                             </div>
-
-                            <button type='button' className='btn btn-secondary m-1' onClick={() => setNumParagraphs(numParagraphs + 1)}>Add another paragraph</button>
-
-                            <button type='button' className='btn btn-secondary m-1' onClick={() => setNumPhotos(numPhotos + 1)}>Add another Photo URL</button>
-
-                            <button id='signin' onClick={notify} variant="success" type="submit" className='btn btn-success'>Send</button>
-                            <ToastContainer />
                         </Box>
                     </Paper>
                 </div>
@@ -195,4 +186,4 @@ const Addblog = () => {
     )
 }
 
-export default Addblog
+export default Addblog;
