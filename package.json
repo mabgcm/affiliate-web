@@ -19,6 +19,7 @@
     "react-dom": "^18.2.0",
     "react-firebase-hooks": "^5.1.1",
     "react-google-button": "^0.7.2",
+    "react-helmet": "^6.1.0",
     "react-material-ui-carousel": "^3.4.2",
     "react-quill": "^2.0.0",
     "react-router": "^6.8.0",
