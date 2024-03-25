@@ -19,6 +19,11 @@ const RecentPost = () => {
         });
     }, []);
 
+    // Function to create markup from the CKEditor data
+    const createMarkup = (html) => {
+        return { __html: html };
+    };
+
     return (
         <div className="col-lg-4">
             {blogs.slice(0, 1).map(({ id, title, category, paragraphs, profile, author, timestamp }) => (
@@ -35,13 +40,13 @@ const RecentPost = () => {
                         <span>{new Date(timestamp?.toDate()).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: '2-digit' }).toUpperCase()}</span>
                     </div>
                     <h2><Link to={`/blogpost/${id}`}>{title}</Link></h2>
-                    {/* Display the first paragraph */}
-                    <p className="mb-4 d-block">{paragraphs[0].text}</p>
+                    {/* Display the first paragraph with CKEditor formatting */}
+                    <div className="mb-4 d-block" dangerouslySetInnerHTML={createMarkup(paragraphs[0].text)}></div>
                     {/* If there's no second paragraph, display the first subheading and the first paragraph after the first subheading */}
                     {paragraphs.length === 1 && paragraphs[0].subheading && (
                         <>
                             <h3 className="mb-4 d-block">{paragraphs[0].subheading}</h3>
-                            <p className="mb-4 d-block">{paragraphs[0].text}</p>
+                            <div className="mb-4 d-block" dangerouslySetInnerHTML={createMarkup(paragraphs[0].text)}></div>
                         </>
                     )}
                     <div className="d-flex align-items-center author">

@@ -11,6 +11,9 @@ import {
     serverTimestamp,
 } from "firebase/firestore";
 import { useNavigate } from 'react-router';
+import ReactQuill from 'react-quill'; // Import ReactQuill
+import 'react-quill/dist/quill.snow.css'; // Import Quill styles
+
 
 const initialState = {
     title: "",
@@ -48,6 +51,20 @@ const notify = () =>
         position: toast.POSITION.BOTTOM_RIGHT
     });
 
+const modules = {
+    toolbar: [
+        [{ 'font': [] }],
+        [{ header: ['2', '3'] }],
+        [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
+        ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+        [{ 'color': [] }, { 'background': [] }],            // dropdown with defaults from theme
+        [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+        [{ 'align': [] }],
+        ['link'],                                // link and image, video
+        ['clean']                                         // remove formatting button
+    ],
+};
+
 const Addblog = () => {
     const user = auth.currentUser;
     const [form, setForm] = useState(initialState);
@@ -70,6 +87,16 @@ const Addblog = () => {
             });
             setForm({ ...form, paragraphs: updatedParagraphs });
         }
+    };
+
+    const handleQuillChange = (value, index) => {
+        const updatedParagraphs = paragraphs.map((paragraph, idx) => {
+            if (idx === index) {
+                return { ...paragraph, text: value };
+            }
+            return paragraph;
+        });
+        setForm({ ...form, paragraphs: updatedParagraphs });
     };
 
     const onCategoryChange = (e) => {
@@ -159,15 +186,12 @@ const Addblog = () => {
                                                 placeholder="Enter your subheading here.."
                                             />
                                         )}
-                                        <TextField
-                                            id={`parag${index}`}
-                                            name="text"
-                                            label={`Paragraph ${index + 1}`}
+                                        <ReactQuill
+                                            theme="snow"
+                                            modules={modules}
+                                            style={{ height: '350px', width: '90%', margin: 'auto', marginBottom: '40px' }}
                                             value={para.text}
-                                            onChange={(e) => handleChange(e, index)}
-                                            multiline
-                                            rows={4}
-                                            placeholder="Enter your paragraph here.."
+                                            onChange={(content) => handleQuillChange(content, index)}
                                         />
                                         <TextField
                                             id={`image${index}`}
@@ -205,7 +229,7 @@ const Addblog = () => {
                 </div>
             </section>
         </div>
-    )
+    );
 }
 
 export default Addblog;

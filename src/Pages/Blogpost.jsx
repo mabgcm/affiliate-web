@@ -24,6 +24,11 @@ const Blogpost = () => {
         }
     }, [id]);
 
+    // Function to create markup from the CKEditor data
+    const createMarkup = (html) => {
+        return { __html: html };
+    };
+
     return (
         <main id="main">
             {article && (
@@ -67,7 +72,8 @@ const Blogpost = () => {
                                     {article.paragraphs.map((para, index) => (
                                         <React.Fragment key={index}>
                                             {index !== 0 && para.subheading && <h2>{para.subheading}</h2>}
-                                            <p>{para.text}</p>
+                                            {/* Use dangerouslySetInnerHTML to render the CKEditor content */}
+                                            <div dangerouslySetInnerHTML={createMarkup(para.text)}></div>
                                             {index !== 0 && para.image && (
                                                 <figure className="my-4">
                                                     {/* Ensure that the link property exists and is not empty */}
