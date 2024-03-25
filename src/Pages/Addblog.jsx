@@ -196,7 +196,7 @@ const Addblog = () => {
                                         <TextField
                                             id={`image${index}`}
                                             name="image"
-                                            label={`Photo ${index + 1} link`}
+                                            label={`Photo ${index + 1} source link`}
                                             value={para.image}
                                             onChange={(e) => handleChange(e, index)}
                                             placeholder="Paste your photo link here.."
@@ -204,10 +204,10 @@ const Addblog = () => {
                                         <TextField
                                             id={`link${index}`}
                                             name="link"
-                                            label={`Link for Photo ${index + 1}`}
+                                            label={`Target URL for Photo ${index + 1}`}
                                             value={para.link}
                                             onChange={(e) => handleChange(e, index)}
-                                            placeholder="Enter the link for the photo here.."
+                                            placeholder="The target when clicking on photo"
                                         />
                                         <TextField
                                             id={`caption${index}`}
