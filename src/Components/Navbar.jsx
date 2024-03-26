@@ -16,9 +16,9 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserAuth } from '../context/AuthContext';
 import { Avatar } from '@mui/material';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 
-const pages = ['Resume', 'Portfolio', 'Contact'];
+const pages = ['Plans', 'Jobs'];
 const settings = [];
 
 
