@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import '../assets/css/main.css';
 import '../assets/css/variables.css';
 import CircleIcon from '@mui/icons-material/Circle';
-import { useParams } from 'react-router-dom';
+import EditIcon from '@mui/icons-material/Edit';
+import { useParams, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet'; // Import Helmet
 import { UserAuth } from '../context/AuthContext';
 import { doc, onSnapshot, getDocs, collection, query, where } from 'firebase/firestore';
@@ -13,9 +14,11 @@ import Recommend from '../Components/Recommend';
 
 const Blogpost = () => {
     const { id } = useParams();
+    const navigate = useNavigate();
     const [article, setArticle] = useState(null);
     const { user } = UserAuth();
     const [recommendedArticles, setRecommendedArticles] = useState([]);
+    const [isAuthor, setIsAuthor] = useState(false);
 
     useEffect(() => {
         if (id) {
@@ -23,11 +26,12 @@ const Blogpost = () => {
             onSnapshot(docRef, (snapshot) => {
                 const data = snapshot.data();
                 setArticle({ ...data, id: snapshot.id });
-                // Fetch recommended articles based on the current article's category
+                // Check if the current user is the author of the post
+                setIsAuthor(user?.uid === data.userId);
                 fetchRecommendedArticles(data.category);
             });
         }
-    }, [id]);
+    }, [id, user]);
 
     const fetchRecommendedArticles = async (category) => {
         const q = query(collection(db, "blogpost"), where("category", "==", category));
@@ -82,7 +86,7 @@ const Blogpost = () => {
                             <div className="row">
                                 <div className="col-md-9 col-lg-9 post-content">
                                     <div className="single-post">
-                                        {/* Render the first image at the top if it exists */}
+
                                         {article.paragraphs[0].image && (
                                             <figure className="my-4">
                                                 {/* Ensure that the link property exists and is not empty */}
@@ -101,6 +105,13 @@ const Blogpost = () => {
                                                     <span className="date">{article.category}</span>
                                                     <span className="mx-1"><CircleIcon fontSize='xsmall' /></span>
                                                     <span>{new Date(article.timestamp?.toDate()).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: '2-digit' }).toUpperCase()}</span>
+                                                </div>
+                                                <div>
+                                                    {isAuthor && (
+                                                        <a onClick={() => navigate(`/edit/${article.id}`)}>
+                                                            <EditIcon />
+                                                        </a>
+                                                    )}
                                                 </div>
                                             </div>
                                             <div className="col-2">

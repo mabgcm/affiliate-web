@@ -15,6 +15,7 @@ import Posts from "./Components/Posts";
 import Posts2 from "./Components/Posts";
 import Comment from "./Components/Comment";
 import Likes from "./Components/Likes";
+import EditBlogPost from "./Pages/EditBlogPost";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path='Portfolio' element={<Portfolio />} />
           <Route path='account' element={<Protected disabled={true}><Account /></Protected>} />
           <Route path='blogpost/:id' element={<Protected disabled={true}><Blogpost /></Protected>} />
+          <Route path='edit/:id' element={<Protected disabled={true}><EditBlogPost /></Protected>} />
           <Route path='addblog' element={<Protected><Addblog /></Protected>} />
           <Route path='recentpost' element={<Protected disabled={true}><RecentPost /></Protected>} />
           <Route path='posts' element={<Protected disabled={true}><Posts /></Protected>} />
