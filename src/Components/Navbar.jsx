@@ -30,21 +30,22 @@ function Navbar() {
     const handleGoogleSignIn = async () => {
         try {
             await googleSignIn();
+            navigate('/account');
         } catch (error) {
             console.log(error);
         }
     };
 
-    useEffect(() => {
-        if (user != null) {
-            navigate('/account')
-        }
-    }, [user]);
+    // useEffect(() => {
+    //     if (user != null) {
+    //         navigate('/')
+    //     }
+    // }, [user]);
 
     const handleSignOut = async () => {
         try {
             await logOut();
-            navigate('/');
+            // navigate('/');
         } catch (error) {
             console.log(error);
         }

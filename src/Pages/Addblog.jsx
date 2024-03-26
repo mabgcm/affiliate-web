@@ -25,6 +25,7 @@ const categoryOption = [
     "Artificial Intelligence",
     "Blockchain",
     "Blogging",
+    "Career Advice",
     "Cloud Computing",
     "Coding",
     "Content Marketing",
