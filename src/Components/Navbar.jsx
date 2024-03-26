@@ -24,6 +24,11 @@ const settings = [];
 
 function Navbar() {
 
+    const appBarStyle = {
+        textDecoration: 'none',
+        backgroundColor: 'black', // Set the AppBar background color to black
+    }
+
     const { googleSignIn, user, logOut } = UserAuth();
     const navigate = useNavigate();
 
@@ -65,11 +70,6 @@ function Navbar() {
     const handleCloseUserMenu = () => {
         setAnchorElUser(null);
     };
-
-    const appBarStyle = {
-        textDecoration: 'none',
-        backgroundColor: 'black',
-    }
 
 
     return (
@@ -125,17 +125,21 @@ function Navbar() {
                             onClose={handleCloseNavMenu}
                             sx={{
                                 display: { xs: 'block', md: 'none' },
+                                '& .MuiPaper-root': { // This targets the Paper component inside the Menu
+                                    backgroundColor: 'black', // Set the background color to black
+                                    color: 'white', // Set the text color to white
+                                },
                             }}
                         >
                             {pages.map((page) => (
                                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                                     <Typography textAlign="center">
-                                        <Link style={{ textDecoration: 'none', color: 'black' }} to={`/${page}`}>{page}</Link>
+                                        <Link style={{ textDecoration: 'none', color: 'white' }} to={`/${page}`}>{page}</Link>
                                     </Typography>
                                 </MenuItem>
                             ))}
                             {user && <MenuItem>
-                                <Link style={{ textDecoration: 'none', color: 'black' }} to='/account'>Blog</Link>
+                                <Link style={{ textDecoration: 'none', color: 'white' }} to='/account'>Blog</Link>
                             </MenuItem>}
                         </Menu>
                     </Box>
