@@ -51,15 +51,15 @@ const Home = () => {
                             <div className="mxterWrap mx-auto">
                                 <div className="wow fadeInDown">
                                     <h1 className="text-white text-uppercase mb-3">
-                                        <span className="d-block headingTitle mb-1">Learn yourself</span>
-                                        <span className="d-block">Unlock your potential</span>
+                                        <span className="d-block headingTitle mb-1">Ignite Your Passion for Learning!</span>
+                                        <span className="d-block">Embark on a Journey of Discovery</span>
                                     </h1>
                                 </div>
                                 <div>
-                                    <strong>This should be used to tell a story and let your users know a little more about your product or service. How can you benefit them?</strong>
+                                    <strong>Unlock the door to your future with our diverse range of courses!</strong>
                                 </div>
-                                <a href="#" className="btn btnTheme position-relative border-0 p-0 mt-4 wow bounceIn" data-wow-delay="1s" data-hover="Grab Your Course">
-                                    <span className="d-block btnText">Grab Your Course</span>
+                                <a href="#" className="btn btnTheme position-relative border-0 p-0 mt-4 wow bounceIn" data-wow-delay="1s" data-hover="Explore Courses">
+                                    <span className="d-block btnText">Explore Courses</span>
                                 </a>
                             </div>
                             <div className='position-relative catsWrap mx-auto mt-6 mt-md-0 wow flipInX'>
