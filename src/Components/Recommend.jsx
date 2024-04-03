@@ -20,10 +20,10 @@ const Recommend = ({ recommendedArticles }) => {
                                     <span className="mx-1"><CircleIcon fontSize='xsmall' /></span>
                                     <span>{new Date(article.timestamp?.toDate()).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: '2-digit' }).toUpperCase()}</span>
                                 </div>
-                                <h2 className="mb-2">
+                                <h2 className="mb-2 fontAlter">
                                     <Link to={`/blogpost/${article.id}`}>{article.title}</Link>
                                 </h2>
-                                <span className="author mb-3 d-block">{article.author}</span>
+                                <span className="author mb-3 d-block fontBase">{article.author}</span>
                             </div>
                         </div>
                     </div>

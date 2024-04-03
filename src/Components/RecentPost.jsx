@@ -39,9 +39,9 @@ const RecentPost = () => {
                         <span className="mx-1"><CircleIcon fontSize='xsmall' /></span>
                         <span>{new Date(timestamp?.toDate()).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: '2-digit' }).toUpperCase()}</span>
                     </div>
-                    <h2><Link to={`/blogpost/${id}`}>{title}</Link></h2>
+                    <h2 className='fontAlter'><Link to={`/blogpost/${id}`}>{title}</Link></h2>
                     {/* Display the first paragraph with CKEditor formatting */}
-                    <div className="mb-4 d-block" dangerouslySetInnerHTML={createMarkup(paragraphs[0].text)}></div>
+                    <div className="mb-4 d-block fontFourth" dangerouslySetInnerHTML={createMarkup(paragraphs[0].text)}></div>
                     {/* If there's no second paragraph, display the first subheading and the first paragraph after the first subheading */}
                     {paragraphs.length === 1 && paragraphs[0].subheading && (
                         <>
@@ -52,7 +52,7 @@ const RecentPost = () => {
                     <div className="d-flex align-items-center author">
                         <div className="photo"><img src={profile} alt="" className="img-fluid" /></div>
                         <div className="name">
-                            <h3 className="m-0 p-0">{author}</h3>
+                            <h3 className="m-0 p-0 fontBase">{author}</h3>
                         </div>
                     </div>
                 </div>

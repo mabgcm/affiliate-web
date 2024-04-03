@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../assets/css/main.css';
 import '../assets/css/variables.css';
+import '../assets/css/style.css';
 import CircleIcon from '@mui/icons-material/Circle';
 import EditIcon from '@mui/icons-material/Edit';
 import { useParams, useNavigate } from 'react-router-dom';
@@ -123,13 +124,13 @@ const Blogpost = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <h1 className="mb-5">{article.title}</h1>
+                                        <h1 className="mb-5 fontAlter">{article.title}</h1>
                                         {/* Render the rest of the paragraphs, subheadings, and images */}
                                         {article.paragraphs.map((para, index) => (
                                             <React.Fragment key={index}>
-                                                {index !== 0 && para.subheading && <h2>{para.subheading}</h2>}
+                                                {index !== 0 && para.subheading && <h2 className='fontFourth'>{para.subheading}</h2>}
                                                 {/* Use dangerouslySetInnerHTML to render the CKEditor content */}
-                                                <div dangerouslySetInnerHTML={createMarkup(para.text)}></div>
+                                                <div className='fontFourth' dangerouslySetInnerHTML={createMarkup(para.text)}></div>
                                                 {index !== 0 && para.image && (
                                                     <figure className="my-4">
                                                         {/* Ensure that the link property exists and is not empty */}

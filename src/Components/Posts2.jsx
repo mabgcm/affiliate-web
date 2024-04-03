@@ -34,7 +34,7 @@ const Posts2 = () => {
                         <span className="mx-1"><CircleIcon fontSize='xsmall' /></span>
                         <span>{new Date(timestamp?.toDate()).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: '2-digit' }).toUpperCase()}</span>
                     </div>
-                    <h2><Link to={`/blogpost/${id}`}>{title}</Link></h2>
+                    <h2 className='fontAlter'><Link to={`/blogpost/${id}`}>{title}</Link></h2>
                 </div>
             ))}
         </div>
