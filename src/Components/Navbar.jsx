@@ -138,9 +138,9 @@ function Navbar() {
                                     </Typography>
                                 </MenuItem>
                             ))}
-                            {user && <MenuItem>
+                            <MenuItem>
                                 <Link style={{ textDecoration: 'none', color: 'white' }} to='/account'>Blog</Link>
-                            </MenuItem>}
+                            </MenuItem>
                         </Menu>
                     </Box>
 
