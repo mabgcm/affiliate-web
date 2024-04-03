@@ -8,15 +8,18 @@ import '../assets/css/colors.css'
 import '../assets/css/responsive.css'
 import backgroundImage from '../assets/img/background.jpg'
 import arrow from '../assets/img/arrow1.png'
+import { FaReact, FaDatabase, FaCode, FaLock, FaBitcoin, FaAffiliatetheme } from 'react-icons/fa';
 
 const Home = () => {
 
     const settings = {
-        dots: true, // Show dot indicators
+        dots: false, // Show dot indicators
         infinite: true, // Infinite looping
-        speed: 1000, // Animation speed
+        // speed: 1000, // Animation speed
         slidesToShow: 4, // Number of slides to show at once
         slidesToScroll: 1, // Number of slides to scroll at once
+        autoplay: true, // Add this line to enable autoplay
+        autoplaySpeed: 2000, // Adjust the speed as needed
         responsive: [
             {
                 breakpoint: 1024,
@@ -48,12 +51,12 @@ const Home = () => {
                             <div className="mxterWrap mx-auto">
                                 <div className="wow fadeInDown">
                                     <h1 className="text-white text-uppercase mb-3">
-                                        <span className="d-block headingTitle mb-1">Learn with us</span>
-                                        <span className="d-block">Study with experts</span>
+                                        <span className="d-block headingTitle mb-1">Learn yourself</span>
+                                        <span className="d-block">Unlock your potential</span>
                                     </h1>
                                 </div>
-                                <div className="wow fadeInDown" data-wow-delay="0.5s">
-                                    <p>This should be used to tell a story and let your users know a little more about your product or service. How can you benefit them?</p>
+                                <div>
+                                    <strong>This should be used to tell a story and let your users know a little more about your product or service. How can you benefit them?</strong>
                                 </div>
                                 <a href="#" className="btn btnTheme position-relative border-0 p-0 mt-4 wow bounceIn" data-wow-delay="1s" data-hover="Grab Your Course">
                                     <span className="d-block btnText">Grab Your Course</span>
@@ -72,7 +75,9 @@ const Home = () => {
                                                     <div className="catBoxColumn position-relative rounded d-flex align-items-center justify-content-center w-100 mb-6 mr-2">
                                                         <div className="alignHolder d-flex w-100 align-items-center">
                                                             <div className="align w-100">
-                                                                <i className="icnWrap d-flex align-items-center justify-content-center fi mb-3 flaticon-internet"><span className="sr-only">icon</span></i>
+                                                                <i className="icnWrap d-flex align-items-center justify-content-center fi mb-3">
+                                                                    <FaCode size={50} />
+                                                                    <span className="sr-only">icon</span></i>
                                                                 <h2 className="text-white mb-0">
                                                                     <a href="#">Data Analysis</a>
                                                                 </h2>
@@ -83,7 +88,8 @@ const Home = () => {
                                                     <div className="catBoxColumn position-relative rounded d-flex align-items-center justify-content-center w-100 mb-6">
                                                         <div className="alignHolder d-flex w-100 align-items-center">
                                                             <div className="align w-100">
-                                                                <i className="icnWrap d-flex align-items-center justify-content-center fi mb-3 flaticon-internet"><span className="sr-only">icon</span></i>
+                                                                <i className="icnWrap d-flex align-items-center justify-content-center fi mb-3">
+                                                                    <FaReact size={50} /><span className="sr-only">icon</span></i>
                                                                 <h2 className="text-white mb-0">
                                                                     <a href="#">Web Dev</a>
                                                                 </h2>
@@ -94,7 +100,7 @@ const Home = () => {
                                                     <div className="catBoxColumn position-relative rounded d-flex align-items-center justify-content-center w-100 mb-6">
                                                         <div className="alignHolder d-flex w-100 align-items-center">
                                                             <div className="align w-100">
-                                                                <i className="icnWrap d-flex align-items-center justify-content-center fi mb-3 flaticon-internet"><span className="sr-only">icon</span></i>
+                                                                <i className="icnWrap d-flex align-items-center justify-content-center fi mb-3"><FaLock size={50} /><span className="sr-only">icon</span></i>
                                                                 <h2 className="text-white mb-0">
                                                                     <a href="#">Cyber</a>
                                                                 </h2>
@@ -105,7 +111,7 @@ const Home = () => {
                                                     <div className="catBoxColumn position-relative rounded d-flex align-items-center justify-content-center w-100 mb-6">
                                                         <div className="alignHolder d-flex w-100 align-items-center">
                                                             <div className="align w-100">
-                                                                <i className="icnWrap d-flex align-items-center justify-content-center fi mb-3 flaticon-internet"><span className="sr-only">icon</span></i>
+                                                                <i className="icnWrap d-flex align-items-center justify-content-center fi mb-3"><FaBitcoin size={50} /><span className="sr-only">icon</span></i>
                                                                 <h2 className="text-white mb-0">
                                                                     <a href="#">Crypto</a>
                                                                 </h2>
@@ -116,7 +122,7 @@ const Home = () => {
                                                     <div className="catBoxColumn position-relative rounded d-flex align-items-center justify-content-center w-100 mb-6">
                                                         <div className="alignHolder d-flex w-100 align-items-center">
                                                             <div className="align w-100">
-                                                                <i className="icnWrap d-flex align-items-center justify-content-center fi mb-3 flaticon-internet"><span className="sr-only">icon</span></i>
+                                                                <i className="icnWrap d-flex align-items-center justify-content-center fi mb-3"><FaAffiliatetheme size={50} /><span className="sr-only">icon</span></i>
                                                                 <h2 className="text-white mb-0">
                                                                     <a href="#">Affiliate</a>
                                                                 </h2>
