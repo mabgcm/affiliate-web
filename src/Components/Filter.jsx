@@ -12,6 +12,8 @@ import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
 import Backdrop from '@mui/material/Backdrop';
 import { Link } from 'react-router-dom';
+import '../assets/css/style.css';
+
 
 
 
@@ -125,8 +127,8 @@ const Filter = ({ categoryOption }) => {
                                 <Link className='row d-flex' to={`/blogpost/${post.id}`}>
                                     <div className="col-2 number"><h1>{index + 1}</h1></div>
                                     <div className="col-10">
-                                        <h5>{post.title}</h5>
-                                        <Typography className="author">Posted By:<strong>{post.author}</strong></Typography>
+                                        <h5 className='fontAlter'>{post.title}</h5>
+                                        <Typography className="author fontBase">Posted By:<strong>{post.author}</strong></Typography>
                                     </div>
 
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../assets/css/main.css';
 import '../assets/css/variables.css';
+import '../assets/css/style.css';
 import { collection, query, orderBy, onSnapshot } from 'firebase/firestore';
 import { db } from "../firebase";
 import { Link } from 'react-router-dom';
@@ -63,7 +64,7 @@ const Account = () => {
 
 
     return (
-        <div className='row account mt-5'>
+        <div className='row account bdy'>
 
             {user && user.email === 'bugucam@gmail.com' && (
                 <Box sx={{
@@ -113,8 +114,8 @@ const Account = () => {
                                                     <li key={post.id}>
                                                         <Link to={`/blogpost/${post.id}`}>
                                                             <span className="number">{index + 1}</span>
-                                                            <h3>{post.title}</h3>
-                                                            <span className="author blockquote-footer">{post.author}</span>
+                                                            <h3 className='fontAlter'>{post.title}</h3>
+                                                            <span className="author blockquote-footer fontBase">{post.author}</span>
                                                         </Link>
                                                     </li>
                                                 ))}
