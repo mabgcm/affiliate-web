@@ -3,36 +3,42 @@
         "title": "Front-end Web Development",
         "description": "Learn to build interactive and responsive websites using HTML, CSS, and JavaScript.",
         "duration": "6 months",
-        "hoursPerWeek": "10"
+        "hoursPerWeek": "10",
+        "data": "/frontend.json"
     },
     {
         "title": "Back-end Web Development",
         "description": "Master server-side programming with Node.js and express to build robust web applications.",
         "duration": "6 months",
-        "hoursPerWeek": "12"
+        "hoursPerWeek": "12",
+        "data": "/backend.json"
     },
     {
         "title": "Full-stack Web Development",
         "description": "Combine front-end and back-end technologies to create end-to-end web applications.",
         "duration": "12 months",
-        "hoursPerWeek": "15"
+        "hoursPerWeek": "15",
+        "data": "/fullstack.json"
     },
     {
         "title": "Data Science",
         "description": "Dive into data analysis, machine learning, and statistical modeling to solve complex problems.",
         "duration": "8 months",
-        "hoursPerWeek": "12"
+        "hoursPerWeek": "12",
+        "data": "/datascience.json"
     },
     {
         "title": "Mobile App Development",
         "description": "Learn to design and develop mobile applications for Android and iOS using React Native.",
         "duration": "6 months",
-        "hoursPerWeek": "10"
+        "hoursPerWeek": "10",
+        "data": "/mobiledev.json"
     },
     {
         "title": "Cybersecurity",
         "description": "Understand the fundamentals of cybersecurity, including network security, threat analysis, and ethical hacking.",
         "duration": "6 months",
-        "hoursPerWeek": "10"
+        "hoursPerWeek": "10",
+        "data": "/cybersecurity.json"
     }
 ]

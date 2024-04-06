@@ -6,12 +6,19 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
-
+import { useNavigate } from 'react-router-dom'; // Updated import
 import courseImage from '../assets/img/img/coursee.jpg';
 
 const CourseBox = ({ plan }) => {
+
+    let navigate = useNavigate(); // Updated to use useNavigate
+
+    const handleClick = () => {
+        navigate(`/learningplan/${encodeURIComponent(plan.data)}`);
+    };
+
     return (
-        <Card sx={{ maxWidth: 345, margin: '10px' }}>
+        <Card sx={{ maxWidth: 345, margin: '10px' }} onClick={handleClick}>
             <CardActionArea>
                 <CardMedia
                     sx={{ height: 140 }}
