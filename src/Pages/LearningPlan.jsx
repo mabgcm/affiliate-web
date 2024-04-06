@@ -68,22 +68,27 @@ const LearningPlan = () => {
     }, [dataFilename]); // Re-fetch when dataFilename changes
 
     return (
-        <TableContainer component={Paper}>
-            <Table aria-label="collapsible table">
-                <TableHead>
-                    <TableRow>
-                        <TableCell />
-                        <TableCell>Module Title</TableCell>
-                        <TableCell align="right">Details</TableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {modules.map((module, index) => (
-                        <ModuleRow key={index} module={module} />
-                    ))}
-                </TableBody>
-            </Table>
-        </TableContainer>
+        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '80px' }}>
+            <Typography variant="h4" component="h1" gutterBottom>
+                Learning Plan Title
+            </Typography>
+            <TableContainer component={Paper} sx={{ maxWidth: '80%', marginBottom: '20px' }}>
+                <Table aria-label="collapsible table">
+                    <TableHead>
+                        <TableRow>
+                            <TableCell />
+                            <TableCell>Module Title</TableCell>
+                            <TableCell align="right">Details</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {modules.map((module, index) => (
+                            <ModuleRow key={index} module={module} />
+                        ))}
+                    </TableBody>
+                </Table>
+            </TableContainer>
+        </Box>
     );
 };
 
