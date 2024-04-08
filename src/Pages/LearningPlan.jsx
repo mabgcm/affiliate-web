@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Typography, Link, Grid, Chip } from '@mui/material';
+import { Box, Typography, Link, Grid, Chip, Divider } from '@mui/material';
 import { useParams } from 'react-router-dom';
 
 const LearningPlan = () => {
@@ -99,6 +99,9 @@ const LearningPlan = () => {
                                         </li>
                                     ))}
                                 </ul>
+                                {index !== Object.entries(curriculum.weeklyBreakdown || {}).length - 1 && (
+                                    <Divider sx={{ width: '100%', my: 2 }} />
+                                )}
                             </Box>
                         ))}
                         <Typography variant="h6" gutterBottom>Certification:</Typography>
