@@ -58,7 +58,7 @@ const LearningPlan = () => {
                                 <Typography variant="h6" gutterBottom>Learning Objective:</Typography>
                                 <Typography variant="body1" gutterBottom>{details.objective}</Typography>
                                 <Typography variant="h6" gutterBottom>Resources:</Typography>
-                                <ol style={{ listStylePosition: 'inside' }}>
+                                <ol style={{ listStylePosition: 'inside', padding: 0, margin: 0 }}>
                                     {Object.values(details.resources).map((resource, resourceIndex) => (
                                         <li key={resourceIndex} sx={{ display: 'flex', alignItems: 'flex-start' }}>
                                             {isVideoLink(resource.link) ? (
@@ -71,7 +71,6 @@ const LearningPlan = () => {
                                                     }}
                                                     src={resource.link.replace("watch?v=", "embed/")}
                                                     title="Video player"
-                                                    frameBorder="0"
                                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                                     allowFullScreen
                                                 ></iframe>
