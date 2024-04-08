@@ -21,7 +21,7 @@ const LearningPlan = () => {
 
     return (
 
-        <Grid container spacing={2} sx={{ marginTop: '100px', marginX: '1px', padding: '0 24px' }}>
+        <Grid container spacing={2} sx={{ marginTop: '100px', padding: '0 24px' }}>
             <Grid item xs={12} md={9} lg={9} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <Typography sx={{ marginTop: '40px', marginBottom: '30px', paddingLeft: '5px', align: 'center', }} variant="h4" component="h1" gutterBottom>
@@ -63,11 +63,15 @@ const LearningPlan = () => {
                                         <li key={resourceIndex} sx={{ display: 'flex', alignItems: 'flex-start' }}>
                                             {isVideoLink(resource.link) ? (
                                                 <iframe
-                                                    sx={{ marginTop: '10px' }}
-                                                    width="560"
-                                                    height="315"
+                                                    sx={{
+                                                        width: '100%', // Use 100% width for responsiveness
+                                                        height: { xs: '194px', sm: '315px' }, // Adjust height based on screen size
+                                                        maxWidth: '560px', // Set a max-width to constrain the video size on larger screens
+                                                        marginTop: '10px'
+                                                    }}
                                                     src={resource.link.replace("watch?v=", "embed/")}
                                                     title="Video player"
+                                                    frameBorder="0"
                                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                                     allowFullScreen
                                                 ></iframe>
