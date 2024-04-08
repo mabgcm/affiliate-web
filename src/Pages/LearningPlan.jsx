@@ -1,61 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import {
-    Table,
-    TableBody,
-    TableCell,
-    TableContainer,
-    TableHead,
-    TableRow,
-    Paper,
-    Collapse,
-    Box,
-    Typography,
-    IconButton,
-    List,
-    ListItem,
-    ListItemText
-} from '@mui/material';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import { Box, Typography, Link, Grid, Chip } from '@mui/material';
 import { useParams } from 'react-router-dom';
 
-
-function ModuleRow({ module }) {
-    const [open, setOpen] = useState(false);
-
-    return (
-        <>
-            <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
-                <TableCell>
-                    <IconButton aria-label="expand row" size="small" onClick={() => setOpen(!open)}>
-                        {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-                    </IconButton>
-                </TableCell>
-                <TableCell component="th" scope="row">{module.title}</TableCell>
-                <TableCell align="right">Resources</TableCell>
-            </TableRow>
-            <TableRow>
-                <TableCell sx={{ pb: 0, pt: 0 }} colSpan={6}>
-                    <Collapse in={open} timeout="auto" unmountOnExit>
-                        <Box sx={{ margin: 1 }}>
-                            <Typography variant="h6" gutterBottom component="div">Resources</Typography>
-                            <List>
-                                {module.resources.map((resource, index) => (
-                                    <ListItem key={index}>
-                                        <ListItemText primary={resource.name} secondary={<a href={resource.url} target="_blank" rel="noopener noreferrer">{resource.url}</a>} />
-                                    </ListItem>
-                                ))}
-                            </List>
-                        </Box>
-                    </Collapse>
-                </TableCell>
-            </TableRow>
-        </>
-    );
-}
-
 const LearningPlan = () => {
-    const [modules, setModules] = useState([]);
+    const [curriculum, setCurriculum] = useState({});
     const { dataFilename } = useParams(); // Get the dataFilename parameter from the URL
 
     useEffect(() => {
@@ -63,32 +11,106 @@ const LearningPlan = () => {
             const filename = decodeURIComponent(dataFilename);
             fetch(filename)
                 .then(response => response.json())
-                .then(data => setModules(data.modules)); // Assuming the JSON structure contains a "modules" key
+                .then(data => setCurriculum(data.curriculum)); // Assuming the JSON structure contains a "curriculum" key
         }
     }, [dataFilename]); // Re-fetch when dataFilename changes
 
+    const isVideoLink = (url) => {
+        return url.includes("youtube") || url.includes("vimeo");
+    };
+
     return (
-        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '80px' }}>
-            <Typography variant="h4" component="h1" gutterBottom>
-                Learning Plan Title
-            </Typography>
-            <TableContainer component={Paper} sx={{ maxWidth: '80%', marginBottom: '20px' }}>
-                <Table aria-label="collapsible table">
-                    <TableHead>
-                        <TableRow>
-                            <TableCell />
-                            <TableCell>Module Title</TableCell>
-                            <TableCell align="right">Details</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {modules.map((module, index) => (
-                            <ModuleRow key={index} module={module} />
+
+        <Grid container spacing={2} sx={{ marginTop: '100px', marginX: '1px', padding: '0 24px' }}>
+            <Grid item xs={12} md={9} lg={9} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <Typography sx={{ marginTop: '40px', marginBottom: '30px', paddingLeft: '5px', align: 'center', }} variant="h4" component="h1" gutterBottom>
+                        {curriculum.title}
+                    </Typography>
+                    <Typography sx={{ marginX: '10px' }} variant="body1" gutterBottom>
+                        {curriculum.description}
+                    </Typography>
+                    <Box sx={{ width: '80%', marginBottom: '20px' }}>
+                        <Typography variant="h6" gutterBottom>Prerequisites:</Typography>
+                        <ul>
+                            {curriculum.prerequisites?.map((prerequisite, index) => (
+                                <li key={index}>{prerequisite}</li>
+                            ))}
+                        </ul>
+                        <Typography variant="h6" gutterBottom>Duration:</Typography>
+                        <p>{curriculum.duration}</p>
+                        <Typography variant="h6" gutterBottom>Level:</Typography>
+                        <p>{curriculum.level}</p>
+                        <Typography variant="h6" gutterBottom>Target Audience:</Typography>
+                        <p>{curriculum.targetAudience}</p>
+                        <Typography variant="h6" gutterBottom>Estimated Effort:</Typography>
+                        <p>{curriculum.estimatedEffort}</p>
+                        <Typography variant="h6" gutterBottom>Learning Outcomes:</Typography>
+                        <ul>
+                            {curriculum.learningOutcomes?.map((outcome, index) => (
+                                <li key={index}>{outcome}</li>
+                            ))}
+                        </ul>
+                        {Object.entries(curriculum.weeklyBreakdown || {}).map(([week, details], index) => (
+                            <Box key={index} sx={{ marginBottom: '20px' }}>
+                                <Typography variant="h4" gutterBottom>{details.week}</Typography>
+                                <Typography variant="h5" gutterBottom>{details.topic}</Typography>
+                                <Typography variant="h6" gutterBottom>Learning Objective:</Typography>
+                                <Typography variant="body1" gutterBottom>{details.objective}</Typography>
+                                <Typography variant="h6" gutterBottom>Resources:</Typography>
+                                <ol style={{ listStylePosition: 'inside' }}>
+                                    {Object.values(details.resources).map((resource, resourceIndex) => (
+                                        <li key={resourceIndex} sx={{ display: 'flex', alignItems: 'flex-start' }}>
+                                            {isVideoLink(resource.link) ? (
+                                                <iframe
+                                                    sx={{ marginTop: '10px' }}
+                                                    width="560"
+                                                    height="315"
+                                                    src={resource.link.replace("watch?v=", "embed/")}
+                                                    title="Video player"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                    allowFullScreen
+                                                ></iframe>
+                                            ) : (
+                                                <Chip
+                                                    label={resource.description}
+                                                    component="a"
+                                                    href={resource.link}
+                                                    clickable
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    color="primary"
+                                                    sx={{ marginY: '10px' }}
+                                                />
+                                            )}
+                                        </li>
+                                    ))}
+                                </ol>
+                                <Typography variant="h6" gutterBottom>Activity of the week:</Typography>
+                                <Typography variant="body1" gutterBottom>{details.activities.activity1}</Typography>
+                                <Typography variant="h6" gutterBottom>Interactive Activity:</Typography>
+                                <ul>
+                                    {details.interactiveElements?.map((element, elementIndex) => (
+                                        <li key={elementIndex}>
+                                            <Link href={element.link} target="_blank" rel="noopener noreferrer">{element.name}</Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </Box>
                         ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>
-        </Box>
+                        <Typography variant="h6" gutterBottom>Certification:</Typography>
+                        <p>{curriculum.certification}</p>
+                    </Box>
+                </Box>
+            </Grid>
+            <Grid item xs={12} md={3} lg={3}>
+                <Typography variant="h6" gutterBottom>This will be the ads column</Typography>
+
+            </Grid>
+        </Grid>
+
+
+
     );
 };
 

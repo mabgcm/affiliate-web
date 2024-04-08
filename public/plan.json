@@ -40,5 +40,12 @@
         "duration": "6 months",
         "hoursPerWeek": "10",
         "data": "/cybersecurity.json"
+    },
+    {
+        "title": "Cryptocurrency for Beginners",
+        "description": "This curriculum is designed to introduce beginners to the world of cryptocurrency trading. Covering fundamental concepts, trading strategies, risk management, and practical tools, it aims to equip learners with the knowledge and skills needed to start trading cryptocurrencies effectively.",
+        "duration": "6 weeks",
+        "hoursPerWeek": "3-5",
+        "data": "/crypto.json"
     }
 ]
