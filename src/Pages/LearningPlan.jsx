@@ -104,8 +104,6 @@ const LearningPlan = () => {
                                 )}
                             </Box>
                         ))}
-                        <Typography variant="h6" gutterBottom>Certification:</Typography>
-                        <p>{curriculum.certification}</p>
                     </Box>
                 </Box>
             </Grid>

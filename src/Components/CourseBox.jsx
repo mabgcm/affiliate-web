@@ -7,7 +7,7 @@ import { CardActionArea } from '@mui/material';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import { useNavigate } from 'react-router-dom'; // Updated import
-import courseImage from '../assets/img/img/coursee.jpg';
+import courseImage from '../assets/img/default-image.jpg';
 
 const CourseBox = ({ plan }) => {
 
@@ -22,7 +22,7 @@ const CourseBox = ({ plan }) => {
             <CardActionArea>
                 <CardMedia
                     sx={{ height: 140 }}
-                    image={courseImage}
+                    image={require(`../assets/img/${plan.image}`)}
                     title={plan.title}
                 />
                 <Stack direction="row" spacing={1} sx={{ margin: 2 }}>

@@ -1,59 +1,11 @@
 [
     {
-        "title": "Front-end Web Development",
-        "description": "Learn to build interactive and responsive websites using HTML, CSS, and JavaScript.",
-        "duration": "6 months",
-        "hoursPerWeek": "10",
-        "data": "/frontend.json",
-        "image": "/assets/img/frontend.jpg"
-    },
-    {
-        "title": "Back-end Web Development",
-        "description": "Master server-side programming with Node.js and express to build robust web applications.",
-        "duration": "6 months",
-        "hoursPerWeek": "12",
-        "data": "/backend.json",
-        "image": "/assets/img/backend.jpg"
-    },
-    {
-        "title": "Full-stack Web Development",
-        "description": "Combine front-end and back-end technologies to create end-to-end web applications.",
-        "duration": "12 months",
-        "hoursPerWeek": "15",
-        "data": "/fullstack.json",
-        "image": "/assets/img/fullstack.jpg"
-    },
-    {
-        "title": "Data Science",
-        "description": "Dive into data analysis, machine learning, and statistical modeling to solve complex problems.",
-        "duration": "8 months",
-        "hoursPerWeek": "12",
-        "data": "/datascience.json",
-        "image": "/assets/img/datascience.jpg"
-    },
-    {
-        "title": "Mobile App Development",
-        "description": "Learn to design and develop mobile applications for Android and iOS using React Native.",
-        "duration": "6 months",
-        "hoursPerWeek": "10",
-        "data": "/mobiledev.json",
-        "image": "/assets/img/mobiledev.jpg"
-    },
-    {
-        "title": "Cybersecurity",
-        "description": "Understand the fundamentals of cybersecurity, including network security, threat analysis, and ethical hacking.",
-        "duration": "6 months",
-        "hoursPerWeek": "10",
-        "data": "/cybersecurity.json",
-        "image": "/assets/img/cybersecurity.jpg"
-    },
-    {
         "title": "Cryptocurrency for Beginners",
         "description": "This cryptocurrency trading curriculum covers fundamental concepts, strategies, risk management, and practical tools to help beginners trade cryptocurrencies effectively.",
         "duration": "6 weeks",
         "hoursPerWeek": "3-5",
         "data": "/crypto.json",
-        "image": "/assets/img/crypto.jpg"
+        "image": "crypto.jpg"
     },
     {
         "title": "Intermediate Cryptocurrency",
@@ -61,6 +13,6 @@
         "duration": "8 weeks",
         "hoursPerWeek": "4-6",
         "data": "/cryptointermediate.json",
-        "image": "/assets/img/cryptointermediate.jpg"
+        "image": "cryptointermediate.jpg"
     }
 ]
