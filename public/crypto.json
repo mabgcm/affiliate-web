@@ -1,0 +1,179 @@
+{
+    "curriculum": {
+        "title": "Trading Criptocurrency for Beginners",
+        "description": "This curriculum is designed to introduce beginners to the world of cryptocurrency trading. Covering fundamental concepts, trading strategies, risk management, and practical tools, it aims to equip learners with the knowledge and skills needed to start trading cryptocurrencies effectively.",
+        "prerequisites": [
+            "Basic computer literacy",
+            "Understanding of basic financial concepts"
+        ],
+        "duration": "6 weeks",
+        "level": "Beginner",
+        "targetAudience": "Individuals new to cryptocurrency trading",
+        "estimatedEffort": "3-5 hours per week",
+        "learningOutcomes": [
+            "Understand the basics of cryptocurrencies and blockchain technology",
+            "Identify major cryptocurrencies and their unique features",
+            "Develop and apply basic trading strategies",
+            "Manage risks associated with cryptocurrency trading",
+            "Use trading platforms and tools effectively"
+        ],
+        "weeklyBreakdown": {
+            "week1": {
+                "week": "Week 1",
+                "topic": "Introduction to Cryptocurrencies and Blockchain",
+                "objective": "Understand the fundamentals of cryptocurrencies and how blockchain technology works",
+                "resources": {
+                    "resource1": {
+                        "description": "Comprehensive guide to blockchain technology",
+                        "link": "https://www.blockchain-council.org/cryptocurrency/complete-guide-to-cryptocurrency-trading-for-beginners/"
+                    },
+                    "resource2": {
+                        "description": "Video explaining the basics of cryptocurrencies",
+                        "link": "https://www.youtube.com/watch?v=2ByOXdddmDM"
+                    }
+                },
+                "activities": {
+                    "activity1": "Create a glossary of key blockchain and cryptocurrency terms"
+                },
+                "interactiveElements": [
+                    {
+                        "name": "Article on the history of Bitcoin",
+                        "link": "https://money.usnews.com/investing/articles/the-history-of-bitcoin"
+                    },
+                    {
+                        "name": "Quiz on blockchain fundamentals",
+                        "link": "https://www.babypips.com/crypto/quizzes/blockchain-basics"
+                    }
+                ]
+            },
+            "week2": {
+                "week": "Week 2",
+                "topic": "Major Cryptocurrencies and Their Ecosystems",
+                "objective": "Identify and understand the top cryptocurrencies and their ecosystems",
+                "resources": {
+                    "resource1": {
+                        "description": "Overview of major cryptocurrencies",
+                        "link": "https://www.investopedia.com/terms/c/cryptocurrency.asp"
+                    },
+                    "resource2": {
+                        "description": "Comparison video of top cryptocurrencies",
+                        "link": "https://www.youtube.com/watch?v=qLHHDRhAleA"
+                    },
+                    "resource3": {
+                        "description": "Comparison video of top cryptocurrencies",
+                        "link": "https://www.youtube.com/watch?v=TuMmxn035Ts"
+                    }
+                },
+                "activities": {
+                    "activity1": "Research and present on one major cryptocurrency"
+                },
+                "interactiveElements": [
+                    {
+                        "name": "Interactive chart analysis.",
+                        "link": "https://www.youtube.com/watch?v=YfiqGO0HIbc"
+                    },
+                    {
+                        "name": "Podcast on the future of cryptocurrencies",
+                        "link": "https://podcasts.apple.com/us/podcast/the-future-of-cryptocurrency-public-policy/id1464514138?i=1000603168536"
+                    }
+                ]
+            },
+            "week3": {
+                "week": "Week 3",
+                "topic": "Introduction to Cryptocurrency Trading",
+                "objective": "Learn the basics of how to trade cryptocurrencies",
+                "resources": {
+                    "resource1": {
+                        "description": "Beginner's guide to cryptocurrency trading",
+                        "link": "https://www.bankrate.com/investing/best-online-brokers-cryptocurrency-trading/"
+                    },
+                    "resource2": {
+                        "description": "Video tutorial on using a cryptocurrency exchange",
+                        "link": "https://www.youtube.com/watch?v=mQvw5JXXnrQ"
+                    }
+                },
+                "activities": {
+                    "activity1": "Simulated trading exercise using historical data"
+                },
+                "interactiveElements": [
+                    {
+                        "name": "Trading simulation with PaperTrading",
+                        "link": "https://www.youtube.com/watch?v=mXMEQ31s1gY"
+                    }
+                ]
+            },
+            "week4": {
+                "week": "Week 4",
+                "topic": "Trading Strategies and Risk Management",
+                "objective": "Understand and apply basic trading strategies and risk management techniques",
+                "resources": {
+                    "resource1": {
+                        "description": "Guide to cryptocurrency trading strategies",
+                        "link": "https://www.moneycontrol.com/msite/wazirx-cryptocontrol-articles/crypto-trading-strategies-you-need-to-know/"
+                    },
+                    "resource2": {
+                        "description": "Video on risk management in crypto trading",
+                        "link": "https://www.youtube.com/watch?v=_UEh9fxZspI"
+                    }
+                },
+                "activities": {
+                    "activity1": "Develop a personal trading strategy incorporating risk management"
+                },
+                "interactiveElements": [
+                    {
+                        "name": "Crypto Trading Risk Assessment Tools",
+                        "link": "https://www.youtube.com/watch?v=3D9cJaPkiBM"
+                    }
+                ]
+            },
+            "week5": {
+                "week": "Week 5",
+                "topic": "Using Trading Platforms and Tools",
+                "objective": "Learn to navigate and utilize features of cryptocurrency trading platforms",
+                "resources": {
+                    "resource1": {
+                        "description": "Comparison of popular trading platforms",
+                        "link": "https://www.bankrate.com/investing/best-online-brokers-cryptocurrency-trading/"
+                    },
+                    "resource2": {
+                        "description": "Tutorial on technical analysis tools",
+                        "link": "https://www.youtube.com/watch?v=jmEA-mKz0go"
+                    }
+                },
+                "activities": {
+                    "activity1": "Create a technical analysis of a current cryptocurrency chart"
+                },
+                "interactiveElements": [
+                    {
+                        "name": "Easy Crypto Technical Analysis Tutorial for Beginners (Step-by-Step)",
+                        "link": "https://www.youtube.com/watch?v=5ZGvuNCAlYk"
+                    }
+                ]
+            },
+            "week6": {
+                "week": "Week 6",
+                "topic": "Building a Trading Plan",
+                "objective": "Compile knowledge from the course to create a comprehensive trading plan",
+                "resources": {
+                    "resource1": {
+                        "description": "Steps to building a trading plan",
+                        "link": "https://www.moneycontrol.com/msite/wazirx-cryptocontrol-articles/crypto-trading-strategies-you-need-to-know/"
+                    },
+                    "resource2": {
+                        "description": "Video on the importance of a trading plan",
+                        "link": "https://www.youtube.com/watch?v=KnnuSPxOr2k"
+                    }
+                },
+                "activities": {
+                    "activity1": "Final project: Present your trading plan"
+                },
+                "interactiveElements": [
+                    {
+                        "name": "How I Make $1,000 a Day Trading Cryptocurrency in 2024 (I'll Show you How)",
+                        "link": "https://www.youtube.com/watch?v=ZdHyWn8VYwA"
+                    }
+                ]
+            }
+        }
+    }
+}
