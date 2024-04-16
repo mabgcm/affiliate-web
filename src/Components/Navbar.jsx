@@ -9,8 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
+import { Analytics } from "@vercel/analytics/react"
 import LoginIcon from '@mui/icons-material/Login';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { Link, useNavigate } from 'react-router-dom';
@@ -77,6 +76,8 @@ function Navbar() {
         <AppBar position="fixed" style={appBarStyle} >
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
+
+                    <Analytics />
 
                     <Typography
                         variant="h5"
