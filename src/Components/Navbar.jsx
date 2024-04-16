@@ -16,7 +16,8 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserAuth } from '../context/AuthContext';
 import { Avatar } from '@mui/material';
-// import { useEffect } from 'react';
+import logo from '../assets/img/banner-wht.png';
+
 
 const pages = ['Plans', 'Jobs'];
 const settings = [];
@@ -95,7 +96,7 @@ function Navbar() {
                             }
                         }}
                     >
-                        Cashflow Skills
+                        <img src={logo} alt="Self Guru Logo" style={{ maxWidth: '200px', height: 'auto' }} />
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, }}>
@@ -167,7 +168,7 @@ function Navbar() {
                             }
                         }}
                     >
-                        Cashflow Skills
+                        <img src={logo} alt="Self Guru Logo" style={{ maxWidth: '200px', height: 'auto' }} />
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, paddingLeft: '10%' }}>
                         {pages.map((page) => (
@@ -194,8 +195,8 @@ function Navbar() {
                                 sx={{ width: 35, height: 35, marginRight: 1 }} />
                             <Link to='/' onClick={handleSignOut}><LogoutIcon style={{ color: 'orange' }} /></Link>
                         </Container> : <Container>
-                            <Link style={{ textDecoration: 'none', color: 'white', fontWeight: '700' }} to='https://www.linkedin.com/in/mattalibugucam/' target='_blank'><LinkedInIcon style={{ marginRight: '5px' }} /></Link>
-                            <Link style={{ textDecoration: 'none', color: 'white', fontWeight: '700' }} to='https://github.com/mabgcm' target='_blank'><GitHubIcon /></Link>
+
+
                             <LoginIcon onClick={handleGoogleSignIn} style={{ color: 'lightgreen', marginLeft: '10px', cursor: 'pointer' }} />
                         </Container>}
 
