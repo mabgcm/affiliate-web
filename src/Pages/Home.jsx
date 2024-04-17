@@ -46,7 +46,7 @@ const Home = () => {
         <div>
             <section className="introBlock d-flex w-100 bgCover text-center position-relative text-white" style={{ backgroundImage: `url(${backgroundImage})` }}>
                 <div className="alignHolder w-100 d-flex align-items-center">
-                    <div className="align w-100 pt-20 pt-md-24 pt-lg-30 pt-xl-38 pb-3 pb-md-10" style={{ marginTop: 550 }}>
+                    <div className="align w-100 pt-20 pt-md-24 pt-lg-30 pt-xl-38 pb-3 pb-md-10" style={{ marginTop: 350 }}>
                         <div className="container position-relative">
                             <div className="mxterWrap mx-auto">
                                 <div className="wow fadeInDown">
