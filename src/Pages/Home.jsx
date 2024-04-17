@@ -46,13 +46,13 @@ const Home = () => {
         <div>
             <section className="introBlock d-flex w-100 bgCover text-center position-relative text-white" style={{ backgroundImage: `url(${backgroundImage})` }}>
                 <div className="alignHolder w-100 d-flex align-items-center">
-                    <div className="align w-100 pt-20 pt-md-24 pt-lg-30 pt-xl-38 pb-3 pb-md-10">
+                    <div className="align w-100 pt-20 pt-md-24 pt-lg-30 pt-xl-38 pb-3 pb-md-10" style={{ marginTop: 550 }}>
                         <div className="container position-relative">
                             <div className="mxterWrap mx-auto">
                                 <div className="wow fadeInDown">
                                     <h1 className="text-white text-uppercase mb-3">
-                                        <span className="d-block headingTitle mb-1 font3">Empower Your Future</span>
-                                        <span className="d-block">Master Online Money-Making Skills</span>
+                                        <span className="d-block headingTitle mb-1 font3">Free Your Future</span>
+                                        <span className="d-block">Master The Game of Money</span>
                                     </h1>
                                 </div>
                                 <div>
@@ -64,7 +64,7 @@ const Home = () => {
                             </div>
                             <div className='position-relative catsWrap mx-auto mt-6 mt-md-0 wow flipInX'>
                                 <strong className='arrowTag arrowTag01 fontThird mb-4 mb-md-0 d-block'>
-                                    We provide many types of courses
+                                    Self Learning Plans
                                     <span className='artgArrow1 position-absolute d-none d-md-block'><img src={arrow} alt="" /></span>
                                 </strong>
                                 <div className='row d-block mt-md-14'>

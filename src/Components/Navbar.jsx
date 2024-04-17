@@ -76,9 +76,6 @@ function Navbar() {
         <AppBar position="fixed" style={appBarStyle} >
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-
-                    <Analytics />
-
                     <Typography
                         variant="h5"
                         noWrap
