@@ -1,0 +1,179 @@
+{
+    "curriculum": {
+        "title": "SEO Fundamentals",
+        "description": "This curriculum is designed to introduce beginners to the fundamentals of Search Engine Optimization (SEO). It covers key concepts, strategies, and practical techniques to help learners improve the visibility and ranking of their websites on search engine results pages.",
+        "prerequisites": [
+            "Basic understanding of website development",
+            "Familiarity with digital marketing concepts"
+        ],
+        "duration": "6 weeks",
+        "level": "Beginner",
+        "targetAudience": "Individuals new to SEO or looking to improve their website's search engine performance",
+        "estimatedEffort": "3-5 hours per week",
+        "learningOutcomes": [
+            "Understand the basics of search engine algorithms and how they work",
+            "Identify and apply on-page SEO techniques to optimize website content",
+            "Implement effective off-page SEO strategies to build authority and backlinks",
+            "Utilize keyword research and analysis to drive targeted traffic",
+            "Measure and analyze SEO performance using relevant metrics and tools"
+        ],
+        "weeklyBreakdown": {
+            "week1": {
+                "week": "Week 1",
+                "topic": "Introduction to Search Engine Optimization",
+                "objective": "Understand the fundamentals of SEO and its importance in digital marketing",
+                "resources": {
+                    "resource1": {
+                        "description": "",
+                        "link": ""
+                    },
+                    "resource2": {
+                        "description": "",
+                        "link": ""
+                    }
+                },
+                "activities": {
+                    "activity1": "Conduct a basic SEO audit of a website"
+                },
+                "interactiveElements": [
+                    {
+                        "name": "",
+                        "link": ""
+                    },
+                    {
+                        "name": "",
+                        "link": ""
+                    }
+                ]
+            },
+            "week2": {
+                "week": "Week 2",
+                "topic": "On-Page SEO Optimization",
+                "objective": "Learn how to optimize website content and structure for better search engine visibility",
+                "resources": {
+                    "resource1": {
+                        "description": "",
+                        "link": ""
+                    },
+                    "resource2": {
+                        "description": "",
+                        "link": ""
+                    },
+                    "resource3": {
+                        "description": "",
+                        "link": ""
+                    }
+                },
+                "activities": {
+                    "activity1": "Optimize a webpage for a target keyword"
+                },
+                "interactiveElements": [
+                    {
+                        "name": "",
+                        "link": ""
+                    },
+                    {
+                        "name": "",
+                        "link": ""
+                    }
+                ]
+            },
+            "week3": {
+                "week": "Week 3",
+                "topic": "Off-Page SEO Strategies",
+                "objective": "Understand and implement effective off-page SEO tactics to build authority and backlinks",
+                "resources": {
+                    "resource1": {
+                        "description": "",
+                        "link": ""
+                    },
+                    "resource2": {
+                        "description": "",
+                        "link": ""
+                    }
+                },
+                "activities": {
+                    "activity1": "Develop a link-building strategy for a website"
+                },
+                "interactiveElements": [
+                    {
+                        "name": "",
+                        "link": ""
+                    }
+                ]
+            },
+            "week4": {
+                "week": "Week 4",
+                "topic": "Keyword Research and Analysis",
+                "objective": "Learn how to conduct effective keyword research and analyze search data to drive targeted traffic",
+                "resources": {
+                    "resource1": {
+                        "description": "",
+                        "link": ""
+                    },
+                    "resource2": {
+                        "description": "",
+                        "link": ""
+                    }
+                },
+                "activities": {
+                    "activity1": "Perform keyword research for a website or business"
+                },
+                "interactiveElements": [
+                    {
+                        "name": "",
+                        "link": ""
+                    }
+                ]
+            },
+            "week5": {
+                "week": "Week 5",
+                "topic": "SEO Tools and Analytics",
+                "objective": "Explore and utilize various SEO tools and analytics to measure and optimize website performance",
+                "resources": {
+                    "resource1": {
+                        "description": "",
+                        "link": ""
+                    },
+                    "resource2": {
+                        "description": "",
+                        "link": ""
+                    }
+                },
+                "activities": {
+                    "activity1": "Set up and analyze Google Analytics for a website"
+                },
+                "interactiveElements": [
+                    {
+                        "name": "",
+                        "link": ""
+                    }
+                ]
+            },
+            "week6": {
+                "week": "Week 6",
+                "topic": "Developing an SEO Strategy",
+                "objective": "Compile knowledge from the course to create a comprehensive SEO strategy for a website or business",
+                "resources": {
+                    "resource1": {
+                        "description": "",
+                        "link": ""
+                    },
+                    "resource2": {
+                        "description": "",
+                        "link": ""
+                    }
+                },
+                "activities": {
+                    "activity1": "Final project: Present your SEO strategy"
+                },
+                "interactiveElements": [
+                    {
+                        "name": "",
+                        "link": ""
+                    }
+                ]
+            }
+        }
+    }
+}
