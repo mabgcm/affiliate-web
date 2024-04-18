@@ -24,12 +24,16 @@
                 "objective": "Understand the fundamentals of SEO and its importance in digital marketing",
                 "resources": {
                     "resource1": {
-                        "description": "",
-                        "link": ""
+                        "description": "What Is the Role of SEO in Digital Marketing?",
+                        "link": "https://moz.com/learn/seo/role-of-seo-in-digital-marketing"
                     },
                     "resource2": {
-                        "description": "",
-                        "link": ""
+                        "description": "SEO Basics: What is SEO and Why is it Important?",
+                        "link": "https://www.youtube.com/watch?v=btwC4zmewss"
+                    },
+                    "resource3": {
+                        "description": "Stop Guessing, Start Ranking: The Ultimate ChatGPT & Surfer SEO Blueprint",
+                        "link": "https://www.youtube.com/watch?v=UvoXXSOLETc"
                     }
                 },
                 "activities": {
@@ -37,12 +41,12 @@
                 },
                 "interactiveElements": [
                     {
-                        "name": "",
-                        "link": ""
+                        "name": "Search Engine Optimization (SEO)",
+                        "link": "https://opentextbc.ca/foundationsdigitalmarketing/chapter/search-engine-optimization/"
                     },
                     {
-                        "name": "",
-                        "link": ""
+                        "name": "Fundamentals of Digital Marketing: SEO, SEM and Display Advertising",
+                        "link": "https://www.linkedin.com/pulse/part-2-fundamentals-digital-marketing-seo-sem-display-marissa-waite/"
                     }
                 ]
             },

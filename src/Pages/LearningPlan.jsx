@@ -91,7 +91,7 @@ const LearningPlan = () => {
                                 </ol>
                                 <Typography variant="h6" gutterBottom>Activity of the week:</Typography>
                                 <Typography variant="body1" gutterBottom>{details.activities.activity1}</Typography>
-                                <Typography variant="h6" gutterBottom>Interactive Activity:</Typography>
+                                <Typography variant="h6" gutterBottom>Extra Sources:</Typography>
                                 <ul>
                                     {details.interactiveElements?.map((element, elementIndex) => (
                                         <li key={elementIndex}>
