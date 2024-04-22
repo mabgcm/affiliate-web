@@ -56,16 +56,16 @@
                 "objective": "Learn how to optimize website content and structure for better search engine visibility",
                 "resources": {
                     "resource1": {
-                        "description": "",
-                        "link": ""
+                        "description": "8 Proven Techniques to Improve Your Website Visibility",
+                        "link": "https://www.highervisibility.com/seo/learn/improve-website-visibility/"
                     },
                     "resource2": {
-                        "description": "",
-                        "link": ""
+                        "description": "My Secrets To Creating an SEO Friendly Website",
+                        "link": "https://www.youtube.com/watch?v=5I1hXX_xz7c"
                     },
                     "resource3": {
-                        "description": "",
-                        "link": ""
+                        "description": "On-Page SEO: Optimizing for SERP Visibility",
+                        "link": "https://www.youtube.com/watch?v=-Zw5W10PJTo"
                     }
                 },
                 "activities": {
@@ -73,12 +73,12 @@
                 },
                 "interactiveElements": [
                     {
-                        "name": "",
-                        "link": ""
+                        "name": "Five Ways to Improve Your Site's Ranking (SEO)",
+                        "link": "https://www.mtu.edu/umc/services/websites/seo/"
                     },
                     {
-                        "name": "",
-                        "link": ""
+                        "name": "How to Optimize Your Website for Search Engine Visibility",
+                        "link": "https://www.linkedin.com/pulse/how-optimize-your-website-search-engine-visibility-vconekt/"
                     }
                 ]
             },
