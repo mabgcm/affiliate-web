@@ -152,16 +152,16 @@
                 "objective": "Explore and utilize various SEO tools and analytics to measure and optimize website performance",
                 "resources": {
                     "resource1": {
-                        "description": "",
-                        "link": ""
+                        "description": "18 Top SEO Tools for Auditing, Optimizing, & Tracking",
+                        "link": "https://www.seo.com/tools/"
                     },
                     "resource2": {
-                        "description": "",
-                        "link": ""
+                        "description": "What are the best analytics tools for SEO?",
+                        "link": "https://www.youtube.com/watch?v=QtbSD1pqhM4"
                     },
                     "resource3": {
-                        "description": "",
-                        "link": ""
+                        "description": "SEO Analytics: How To Track & Analyze Your SEO Campaign",
+                        "link": "https://www.youtube.com/watch?v=8NjBWQIaf3I"
                     }
                 },
                 "activities": {
@@ -169,12 +169,12 @@
                 },
                 "interactiveElements": [
                     {
-                        "name": "",
-                        "link": ""
+                        "name": "How Accurate Are SEO Tools and Should You Rely on Them?",
+                        "link": "https://www.singlegrain.com/blog/ms/seo-tools/"
                     },
                     {
-                        "name": "",
-                        "link": ""
+                        "name": "28 Simple and Free SEO Tools to Instantly Improve Your Marketing",
+                        "link": "https://buffer.com/library/free-seo-tools/"
                     }
                 ]
             },
@@ -184,16 +184,12 @@
                 "objective": "Compile knowledge from the course to create a comprehensive SEO strategy for a website or business",
                 "resources": {
                     "resource1": {
-                        "description": "",
-                        "link": ""
+                        "description": "How to Build the Right Set of SEO Resources for Your Company",
+                        "link": "https://www.searchenginejournal.com/how-to-build-the-right-set-of-seo-resources-for-your-company/391185/"
                     },
                     "resource2": {
-                        "description": "",
-                        "link": ""
-                    },
-                    "resource3": {
-                        "description": "",
-                        "link": ""
+                        "description": "Holistic SEO Tutorial Step by Step and Case Study",
+                        "link": "https://www.youtube.com/watch?v=JNCGp7c-Yy0"
                     }
                 },
                 "activities": {
@@ -201,12 +197,8 @@
                 },
                 "interactiveElements": [
                     {
-                        "name": "",
-                        "link": ""
-                    },
-                    {
-                        "name": "",
-                        "link": ""
+                        "name": "Learn SEO: A Blueprint From Beginner To Advanced",
+                        "link": "https://www.searchenginejournal.com/seo/best-seo-resources/"
                     }
                 ]
             }
