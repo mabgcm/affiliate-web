@@ -82,8 +82,15 @@ const LearningPlan = () => {
                                                     clickable
                                                     target="_blank"
                                                     rel="noopener noreferrer"
-                                                    color="primary"
-                                                    sx={{ marginY: '10px' }}
+                                                    color="success"
+                                                    sx={{
+                                                        height: 'auto',
+                                                        '& .MuiChip-label': {
+                                                            display: 'block',
+                                                            whiteSpace: 'normal',
+                                                        },
+                                                        marginBottom: '10px'
+                                                    }}
                                                 />
                                             )}
                                         </li>
