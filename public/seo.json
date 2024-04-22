@@ -120,16 +120,16 @@
                 "objective": "Learn how to conduct effective keyword research and analyze search data to drive targeted traffic",
                 "resources": {
                     "resource1": {
-                        "description": "",
-                        "link": ""
+                        "description": "The role of keyword research in driving website traffic",
+                        "link": "https://aicontentfy.com/en/blog/role-of-keyword-research-in-driving-website-traffic"
                     },
                     "resource2": {
-                        "description": "",
-                        "link": ""
+                        "description": "Keyword Research Tutorial: 3-Step Process for All Levels",
+                        "link": "https://www.youtube.com/watch?v=cAUeS0to3PQ"
                     },
                     "resource3": {
-                        "description": "",
-                        "link": ""
+                        "description": "Keyword Research Tutorial: From Start to Finish",
+                        "link": "https://www.youtube.com/watch?v=OMJQPqG2Uas"
                     }
                 },
                 "activities": {
@@ -137,12 +137,12 @@
                 },
                 "interactiveElements": [
                     {
-                        "name": "",
-                        "link": ""
+                        "name": "Fundamentals of Keyword Research",
+                        "link": "https://neilpatel.com/blog/keyword-research/"
                     },
                     {
-                        "name": "",
-                        "link": ""
+                        "name": "Keyword Research for SEO: What It Is & How to Do It",
+                        "link": "https://www.semrush.com/blog/keyword-research/"
                     }
                 ]
             },
