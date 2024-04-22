@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Typography, Link, Grid, Chip, Divider } from '@mui/material';
 import { useParams } from 'react-router-dom';
+import Ad from '../Components/Ad';
 
 const LearningPlan = () => {
     const [curriculum, setCurriculum] = useState({});
@@ -115,7 +116,7 @@ const LearningPlan = () => {
                 </Box>
             </Grid>
             <Grid item xs={12} md={3} lg={3}>
-                <Typography variant="h6" gutterBottom>This will be the ads column</Typography>
+                <Ad />
 
             </Grid>
         </Grid>
