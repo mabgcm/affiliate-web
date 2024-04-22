@@ -88,12 +88,16 @@
                 "objective": "Understand and implement effective off-page SEO tactics to build authority and backlinks",
                 "resources": {
                     "resource1": {
-                        "description": "",
-                        "link": ""
+                        "description": "Off-Page SEO Techniques 2024: Ultimate Guide For Beginners",
+                        "link": "https://www.stanventures.com/blog/off-page-seo-techniques/"
                     },
                     "resource2": {
-                        "description": "",
-                        "link": ""
+                        "description": "SEO For Beginners: Off-Page SEO",
+                        "link": "https://www.youtube.com/watch?v=nRj_RSavLVQ"
+                    },
+                    "resource3": {
+                        "description": "Beginners Guide To Off-Page SEO",
+                        "link": "https://www.youtube.com/watch?v=_2GhphiYw8w"
                     }
                 },
                 "activities": {
@@ -101,8 +105,12 @@
                 },
                 "interactiveElements": [
                     {
-                        "name": "",
-                        "link": ""
+                        "name": "Off-page Seo: What Is It & How Can You Take Advantage of It",
+                        "link": "https://neilpatel.com/blog/everything-you-need-to-know-about-off-page-seo/"
+                    },
+                    {
+                        "name": "Mastering Off-Page SEO: Boosting Your Website’s Visibility",
+                        "link": "https://optinmonster.com/off-page-seo/"
                     }
                 ]
             },
@@ -118,12 +126,20 @@
                     "resource2": {
                         "description": "",
                         "link": ""
+                    },
+                    "resource3": {
+                        "description": "",
+                        "link": ""
                     }
                 },
                 "activities": {
                     "activity1": "Perform keyword research for a website or business"
                 },
                 "interactiveElements": [
+                    {
+                        "name": "",
+                        "link": ""
+                    },
                     {
                         "name": "",
                         "link": ""
@@ -142,12 +158,20 @@
                     "resource2": {
                         "description": "",
                         "link": ""
+                    },
+                    "resource3": {
+                        "description": "",
+                        "link": ""
                     }
                 },
                 "activities": {
                     "activity1": "Set up and analyze Google Analytics for a website"
                 },
                 "interactiveElements": [
+                    {
+                        "name": "",
+                        "link": ""
+                    },
                     {
                         "name": "",
                         "link": ""
@@ -166,12 +190,20 @@
                     "resource2": {
                         "description": "",
                         "link": ""
+                    },
+                    "resource3": {
+                        "description": "",
+                        "link": ""
                     }
                 },
                 "activities": {
                     "activity1": "Final project: Present your SEO strategy"
                 },
                 "interactiveElements": [
+                    {
+                        "name": "",
+                        "link": ""
+                    },
                     {
                         "name": "",
                         "link": ""
