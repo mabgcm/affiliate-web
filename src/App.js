@@ -24,7 +24,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='plans' element={<Plans />} />
+          <Route path='skills' element={<Plans />} />
           <Route path='jobs' element={<Jobs />} />
           <Route path='account' element={<Protected disabled={true}><Account /></Protected>} />
           <Route path='blogpost/:id' element={<Protected disabled={true}><Blogpost /></Protected>} />
