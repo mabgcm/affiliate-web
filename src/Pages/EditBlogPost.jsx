@@ -16,6 +16,9 @@ import 'react-quill/dist/quill.snow.css';
 
 const categoryOption = [
     "Online Money-Making",
+    "Cryptocurrency",
+    "Inspirational",
+    "Fundamentals",
     "Freelance Opportunities",
     "Blog Monetization",
     "Digital Tools",

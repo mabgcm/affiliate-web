@@ -16,6 +16,9 @@ const Account = () => {
 
     const categoryOption = [
         "Online Money-Making",
+        "Cryptocurrency",
+        "Inspirational",
+        "Fundamentals",
         "Freelance Opportunities",
         "Blog Monetization",
         "Digital Tools",
