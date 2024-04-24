@@ -58,7 +58,7 @@ const Home = () => {
                                 <div>
                                     <strong className='fontFourth'>Step into the world of self-learning and unlock the secrets to financial independence. Dive into our courses and explore the blog for invaluable tips and tricks.</strong>
                                 </div>
-                                <a href="#" className="btn btnTheme position-relative border-0 p-0 mt-4 wow bounceIn" data-wow-delay="1s" data-hover="Discover Now!">
+                                <a href="/plans" className="btn btnTheme position-relative border-0 p-0 mt-4 wow bounceIn" data-wow-delay="1s" data-hover="Discover Now!">
                                     <span className="d-block btnText">Discover Now!</span>
                                 </a>
                             </div>

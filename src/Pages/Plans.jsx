@@ -26,10 +26,10 @@ const LearningPlans = () => {
     return (
         <>
             <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'start', alignItems: 'end', height: 150 }}>
-                <h2 className='font2' style={{ marginLeft: '30%' }}>Learning Plans</h2>
+                <h2 className='font2' style={{ marginLeft: '10%' }}>Earn Extra Cash with Self-Taught Skills</h2>
             </div>
-            <p className='font2' style={{ marginLeft: '30%', width: '50%' }}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis temporibus velit provident qui suscipit. Minima fugit animi obcaecati eaque deleniti, repudiandae rerum blanditiis consequuntur, delectus dolores sapiente est. Obcaecati, sed!
+            <p className='font2' style={{ marginLeft: '10%', width: '80%' }}>
+                The cool thing is, you can learn tons of money-making skills all on your own these days. We've got learning plans made by our pros to teach you the good stuff. Whether you want to start a side gig, pick up in-demand digital skills, or find easy ways to make passive income - we've got you covered. So why not dive in and start your money-making adventure today?
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
                 {learningPlans.map((plan, index) => (
