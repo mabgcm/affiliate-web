@@ -1,22 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import CourseBox from '../Components/CourseBox';
+import axios from 'axios';
 
 const LearningPlans = () => {
     const [learningPlans, setLearningPlans] = useState([]);
 
     useEffect(() => {
-        // Function to fetch the local JSON file
         const fetchLearningPlans = async () => {
             try {
-                // Assuming the JSON file is stored in the public directory
-                const response = await fetch('/plan.json');
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                const data = await response.json();
-                setLearningPlans(data);
+                // Fetch the learning plans from the Vercel-deployed REST API
+                const response = await axios.get('https://plansdata.vercel.app/learning-plans');
+                setLearningPlans(response.data);
             } catch (error) {
-                console.error("Could not fetch the learning plans", error);
+                console.error('Could not fetch the learning plans', error);
             }
         };
 
@@ -38,6 +34,6 @@ const LearningPlans = () => {
             </div>
         </>
     );
-}
+};
 
 export default LearningPlans;
