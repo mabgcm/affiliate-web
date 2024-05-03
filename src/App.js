@@ -28,7 +28,7 @@ function App() {
           <Route path='jobs' element={<Jobs />} />
           <Route path='account' element={<Protected disabled={true}><Account /></Protected>} />
           <Route path='blogpost/:id' element={<Protected disabled={true}><Blogpost /></Protected>} />
-          <Route path='learningplan/:dataFilename' element={<Protected disabled={true}><LearningPlan /></Protected>} />
+          <Route path='learningplan/:id' element={<Protected disabled={true}><LearningPlan /></Protected>} />
           <Route path='edit/:id' element={<Protected disabled={true}><EditBlogPost /></Protected>} />
           <Route path='addblog' element={<Protected><Addblog /></Protected>} />
           <Route path='recentpost' element={<Protected disabled={true}><RecentPost /></Protected>} />

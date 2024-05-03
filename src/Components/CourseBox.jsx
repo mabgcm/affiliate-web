@@ -14,7 +14,7 @@ const CourseBox = ({ plan }) => {
     let navigate = useNavigate(); // Updated to use useNavigate
 
     const handleClick = () => {
-        navigate(`/learningplan/${encodeURIComponent(plan.data)}`);
+        navigate(`/learningplan/${plan.id}`);
     };
 
     return (

@@ -5,23 +5,23 @@ import Ad from '../Components/Ad';
 
 const LearningPlan = () => {
     const [curriculum, setCurriculum] = useState({});
-    const { dataFilename } = useParams(); // Get the dataFilename parameter from the URL
+    const { id } = useParams(); // Get the id parameter from the URL
 
     useEffect(() => {
-        if (dataFilename) {
-            const filename = decodeURIComponent(dataFilename);
-            fetch(filename)
+        if (id) {
+            fetch(`https://plansdata.vercel.app/learning-plan/${id}`)
                 .then(response => response.json())
-                .then(data => setCurriculum(data.curriculum)); // Assuming the JSON structure contains a "curriculum" key
+                .then(data => setCurriculum(data));
         }
-    }, [dataFilename]); // Re-fetch when dataFilename changes
+    }, [id]); // Re-fetch when id changes
 
     const isVideoLink = (url) => {
         return url.includes("youtube") || url.includes("vimeo");
     };
 
-    return (
+    console.log(curriculum);
 
+    return (
         <Grid container spacing={2} sx={{ marginTop: '100px', padding: '0 24px' }}>
             <Grid item xs={12} md={9} lg={9} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -119,9 +119,6 @@ const LearningPlan = () => {
                 <Ad />
             </Grid>
         </Grid>
-
-
-
     );
 };
 
