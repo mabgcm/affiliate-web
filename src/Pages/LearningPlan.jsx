@@ -1,38 +1,49 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Typography, Link, Grid, Chip, Divider } from '@mui/material';
+import { Box, Typography, Link, Grid, Divider } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import Ad from '../Components/Ad';
 
 const LearningPlan = () => {
-    const [curriculum, setCurriculum] = useState({});
+    const [curriculum, setCurriculum] = useState(null); // Initialize to null
     const { id } = useParams(); // Get the id parameter from the URL
 
     useEffect(() => {
         if (id) {
             fetch(`https://plansdata.vercel.app/learning-plan/${id}`)
                 .then(response => response.json())
-                .then(data => setCurriculum(data));
+                .then(data => setCurriculum(data))
+                .catch(error => console.error('Failed to load curriculum:', error)); // Error handling
         }
     }, [id]); // Re-fetch when id changes
 
-    const isVideoLink = (url) => {
-        return url.includes("youtube") || url.includes("vimeo");
+    const renderResource = (resource) => {
+        if (resource.link) {
+            return (
+                <li key={resource.name}>
+                    <Link href={resource.link} target="_blank" rel="noopener">{resource.name}</Link>
+                </li>
+            );
+        } else {
+            return <li key={resource.name}>{resource.name}</li>;
+        }
     };
 
-    console.log(curriculum);
+    if (!curriculum) {
+        return <Typography>Loading...</Typography>; // Display loading or similar message
+    }
 
     return (
         <Grid container spacing={2} sx={{ marginTop: '100px', padding: '0 24px' }}>
             <Grid item xs={12} md={9} lg={9} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <Typography sx={{ marginTop: '40px', marginBottom: '30px', paddingLeft: '5px', align: 'center', }} variant="h4" component="h1" gutterBottom>
+                    <Typography sx={{ marginTop: '40px', marginBottom: '30px', paddingLeft: '5px', align: 'center' }} variant="h2" component="h1" gutterBottom>
                         {curriculum.title}
                     </Typography>
                     <Typography sx={{ marginX: '10px' }} variant="body1" gutterBottom>
                         {curriculum.description}
                     </Typography>
                     {curriculum.weeks && curriculum.weeks.map((week, index) => (
-                        <Box sx={{ marginLeft: '10px', width: 'calc(100% - 40px)' }}>
+                        <Box sx={{ marginLeft: '10px', width: 'calc(100% - 40px)' }} key={index}>
                             <Typography variant="h4" gutterBottom>Week {index + 1}: {week.title}</Typography>
                             <Box sx={{ marginLeft: '40px' }}>
                                 <Typography variant="h6" gutterBottom>Study Hours:</Typography>
@@ -58,7 +69,7 @@ const LearningPlan = () => {
                                 <Typography variant="h6" gutterBottom>Resources:</Typography>
                                 <ul>
                                     {week.resources?.map((resource, resIndex) => (
-                                        <li key={resIndex}>{resource}</li>
+                                        renderResource(resource)
                                     ))}
                                 </ul>
                             </Box>
