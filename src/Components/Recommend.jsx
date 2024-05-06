@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CircleIcon from '@mui/icons-material/Circle';
+import Ad from './Ad';
 
 const Recommend = ({ recommendedArticles }) => {
     return (
@@ -29,6 +30,7 @@ const Recommend = ({ recommendedArticles }) => {
                     </div>
                 ))}
             </div>
+            <Ad />
         </div>
     );
 };
