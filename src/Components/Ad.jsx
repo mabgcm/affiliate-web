@@ -15,7 +15,7 @@ const Ad = () => {
             <Link href="https://37b5cpj7r7wm2n6-4cy5sm8l9w.hop.clickbank.net/?tid=VIPIndicators" target="_blank" >
                 <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginTop: '15px' }}>
                     <Typography variant='body1' textAlign='center'></Typography>
-                    <img alt="MONEY Master the Game: 7 Simple Steps to Financial Freedom" src="https://www.vipindicators.com/hosted/images/78/94d443797d4c489e21f2c1632a9e8a/Copy-of-Copy-of-Copy-of-Black-Modern-Elegant-Perfume-Instagram-Story-1080-x-1080-px-...png" />
+                    <img alt="VIP Indicators" src="https://www.vipindicators.com/hosted/images/78/94d443797d4c489e21f2c1632a9e8a/Copy-of-Copy-of-Copy-of-Black-Modern-Elegant-Perfume-Instagram-Story-1080-x-1080-px-...png" />
                 </Box>
 
             </Link>

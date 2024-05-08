@@ -8,7 +8,7 @@ import '../assets/css/colors.css'
 import '../assets/css/responsive.css'
 import backgroundImage from '../assets/img/background.jpg'
 import arrow from '../assets/img/arrow1.png'
-import { FaBrain, FaBitcoin, FaAffiliatetheme } from 'react-icons/fa';
+import { FaShopify, FaBitcoin, FaAffiliatetheme } from 'react-icons/fa';
 import { GiInspiration } from "react-icons/gi";
 import { TbZoomMoney } from "react-icons/tb";
 
@@ -86,10 +86,10 @@ const Home = () => {
                                                         <div className="alignHolder d-flex w-100 align-items-center">
                                                             <div className="align w-100">
                                                                 <i className="icnWrap d-flex align-items-center justify-content-center fi mb-3">
-                                                                    <FaBrain size={70} />
+                                                                    <FaShopify size={70} />
                                                                     <span className="sr-only">icon</span></i>
                                                                 <h2 className="text-white mb-0">
-                                                                    <a href="/blogpost/I49fqgX6AcQJei3thvQp">How To Evaluate Online Business Ideas for Profitability</a>
+                                                                    <a href="/blogpost/K6I1kOCHbbWKBNQ9Q8hn">Dominating the Digital Marketplace with Shopify</a>
                                                                 </h2>
                                                                 <strong className="cbcTag position-absolute bg-warning text-white rounded font-weight-normal">New</strong>
                                                             </div>

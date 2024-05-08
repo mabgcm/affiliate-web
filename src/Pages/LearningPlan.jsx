@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Box, Typography, Link, Grid, Divider } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import Ad from '../Components/Ad';
+import Ad1 from '../Ads/Ad1';
 
 const LearningPlan = () => {
     const [curriculum, setCurriculum] = useState(null); // Initialize to null
@@ -82,6 +83,7 @@ const LearningPlan = () => {
             </Grid>
             <Grid item xs={12} md={3} lg={3}>
                 <Ad />
+                <Ad1 />
             </Grid>
         </Grid>
     );
