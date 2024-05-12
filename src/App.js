@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import './App.css';
-import Home from './Pages/Home';
+// import Home from './Pages/Home';
+import Home2 from './Pages/Home2';
 import Navbar from './Components/Navbar';
 import Blogpost from "./Pages/Blogpost";
 import { AuthContextProvider } from './context/AuthContext';
@@ -23,7 +24,8 @@ function App() {
       <AuthContextProvider>
         <Navbar />
         <Routes>
-          <Route path='/' element={<Home />} />
+          {/* <Route path='/' element={<Home />} /> */}
+          <Route path='/' element={<Home2 />} />
           <Route path='skills' element={<Plans />} />
           <Route path='jobs' element={<Jobs />} />
           <Route path='account' element={<Protected disabled={true}><Account /></Protected>} />
