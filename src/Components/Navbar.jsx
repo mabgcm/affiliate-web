@@ -18,7 +18,7 @@ import { Avatar } from '@mui/material';
 import logo from '../assets/img/banner-wht.png';
 
 
-const pages = ['Learning Plans'];
+const pages = ['Jobs'];
 const settings = [];
 
 
@@ -140,6 +140,9 @@ function Navbar() {
                             <MenuItem>
                                 <Link style={{ textDecoration: 'none', color: 'white' }} to='/account'>Blog</Link>
                             </MenuItem>
+                            <MenuItem>
+                                <Link style={{ textDecoration: 'none', color: 'white' }} to='/skills'>Learning Plans</Link>
+                            </MenuItem>
                         </Menu>
                     </Box>
 
@@ -180,6 +183,7 @@ function Navbar() {
                         ))}
 
                         <Button>
+                            <Link style={{ textDecoration: 'none', color: 'white', fontWeight: '700', marginRight: "15px" }} to='/skills'>Learning Plans</Link>
                             <Link style={{ textDecoration: 'none', color: 'white', fontWeight: '700' }} to='/account'>Blog</Link>
                         </Button>
                     </Box>
