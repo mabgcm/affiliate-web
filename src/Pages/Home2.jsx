@@ -1,31 +1,58 @@
-import '../assets/home2.css'
-import { FaSearch, FaUsers, FaBell } from "react-icons/fa"; // Importing FontAwesome icons
-import { MdNotifications } from "react-icons/md"; // Importing Material Icons
-import { TiGlobe } from "react-icons/ti"; // Importing Typicons
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for redirection
+import '../assets/css/home2.css';
+import { FaSearch, FaUsers } from "react-icons/fa";
+import { MdNotifications } from "react-icons/md";
 import { CiGlobe } from "react-icons/ci";
 
-
-
-const title = <h2>Search Your One From <span>150+</span> Online Courses</h2>;
-const desc = "We Have The Largest Collection of Courses";
-const iconStyle = { color: '#00BF63' }; // Define the style object for the icons
-
+const learningPlans = [
+    { "id": "amazonfba", "title": "Amazon FBA" },
+    { "id": "amazonfbm", "title": "Amazon FBM" },
+    { "id": "blockchain", "title": "Blockchain Fundamentals" },
+    { "id": "copywriting", "title": "Copywriting Mastery" },
+    { "id": "crypto", "title": "Crypto Trading Strategies" },
+    { "id": "cybersecurity", "title": "Cybersecurity Fundamentals" },
+    { "id": "digitalmarketing", "title": "Digital Marketing Essentials" },
+    { "id": "emailmarketing", "title": "Email Marketing Mastery" },
+    { "id": "seo", "title": "SEO Fundamentals" },
+    { "id": "shopify", "title": "Shopify for Ecommerce" },
+    { "id": "socialmarketing", "title": "Social Media Marketing" },
+    { "id": "virtualassistance", "title": "Virtual Assistance" },
+    { "id": "webdev", "title": "Web Development Fundamentals" },
+    { "id": "wordpress", "title": "WordPress for Beginners" }
+];
 
 const Home2 = () => {
+    const [searchTerm, setSearchTerm] = useState('');
+    const navigate = useNavigate();
+
+    const handleSearch = (event) => {
+        event.preventDefault();
+        const foundPlan = learningPlans.find(plan =>
+            plan.title.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        if (foundPlan) {
+            navigate(`/learning-plan/${foundPlan.id}`); // Redirect to LearningPlan with the found ID
+        } else {
+            navigate('/error'); // Redirect to the error page if no plan is found
+        }
+    };
+
     return (
         <div className="banner-section style-4">
             <div className="container">
                 <div className="banner-content">
-                    {title}
-                    <form>
-                        <input type="text" name="search" placeholder="Search your skill" />
-                        <button type="submit"><FaSearch size={25} /></button>
+                    <h2>Learn a Skill Today!</h2>
+                    {/* <h2>Search the skill you want to learn among <span>150+</span> Learning Plans</h2> */}
+                    <form onSubmit={handleSearch}>
+                        <input type="text" name="search" placeholder="Type the skill you want to learn" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+                        <button type="submit"><FaSearch size={20} /></button>
                     </form>
-                    <p>{desc}</p>
+                    <p>Our Plans are designed for self learning & empowered by googling!</p>
                     <ul className="lab-ul">
-                        <li><FaUsers size={25} style={iconStyle} /> 1.5 Million Students</li>
-                        <li><MdNotifications size={25} style={iconStyle} /> More then 2000 Courses</li>
-                        <li><CiGlobe size={25} style={iconStyle} /> Learn Anything Online</li>
+                        <li><FaUsers size={25} style={{ color: '#00BF63' }} /> 1.5 Million Students</li>
+                        <li><MdNotifications size={25} style={{ color: '#00BF63' }} /> More then 2000 Courses</li>
+                        <li><CiGlobe size={25} style={{ color: '#00BF63' }} /> Learn Anything Online</li>
                     </ul>
                 </div>
             </div>

@@ -71,8 +71,8 @@ const Blogpost = () => {
             {article && (
                 <>
                     <Helmet>
-                        <title>{article.title} - Your Blog Name</title>
-                        <meta name="description" content={article.paragraphs[0].text.substring(0, 150)} />
+                        <title>{article.title} - SelfGuru ©</title>
+                        <meta name="description" content={article.paragraphs[0].text.substring(0, 160)} />
                         {/* Add more meta tags as needed */}
                         <link rel="canonical" href={`https://www.yourblog.com/blogpost/${id}`} />
                         {/* Open Graph tags for social media */}

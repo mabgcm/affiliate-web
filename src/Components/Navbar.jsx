@@ -18,7 +18,7 @@ import { Avatar } from '@mui/material';
 import logo from '../assets/img/banner-wht.png';
 
 
-const pages = ['Skills', 'Jobs'];
+const pages = ['Learning Plans'];
 const settings = [];
 
 

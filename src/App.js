@@ -17,6 +17,7 @@ import EditBlogPost from "./Pages/EditBlogPost";
 import Plans from "./Pages/Plans";
 import Jobs from "./Pages/Jobs";
 import LearningPlan from "./Pages/LearningPlan";
+import ErrorPage from "./Pages/404";
 
 function App() {
   return (
@@ -38,6 +39,8 @@ function App() {
           <Route path='posts2' element={<Protected disabled={true}><Posts2 /></Protected>} />
           <Route path='comment' element={<Protected><Comment /></Protected>} />
           <Route path='likes' element={<Protected><Likes /></Protected>} />
+          <Route path='error' element={<Protected disabled={true}><ErrorPage /></Protected>} />
+
         </Routes>
       </AuthContextProvider>
     </div>
