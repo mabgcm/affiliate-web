@@ -32,7 +32,7 @@ const Home2 = () => {
             plan.title.toLowerCase().includes(searchTerm.toLowerCase())
         );
         if (foundPlan) {
-            navigate(`/learning-plan/${foundPlan.id}`); // Redirect to LearningPlan with the found ID
+            navigate(`/learningplan/${foundPlan.id}`); // Redirect to LearningPlan with the found ID
         } else {
             navigate('/error'); // Redirect to the error page if no plan is found
         }
