@@ -1,12 +1,65 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import { Grid, Card, CardContent, CardMedia, Typography, CardActionArea, Link, CircularProgress } from '@mui/material';
+import { IoLocationOutline } from "react-icons/io5";
+import { Grid, Card, CardContent, CardMedia, Typography, CardActionArea, Link, CircularProgress, Stack, Chip } from '@mui/material';
 import '../assets/css/home2.css';
 
 const JobOpportunities = () => {
     const [jobs, setJobs] = useState([]);
     const [searchKeyword, setSearchKeyword] = useState(''); // Default search keyword
     const [loading, setLoading] = useState(false); // Loading state
+    const [searchPerformed, setSearchPerformed] = useState(false);
+
+    const staticJobs = [
+        {
+            id: 'static1',
+            title: 'Earn From Your Photos! Photo Jobs',
+            company: {
+                name: 'Photojobz',
+                logo: 'https://photojobzreview.wordpress.com/wp-content/uploads/2020/10/photojobz-review.png'
+            },
+            location: 'Remote',
+            url: 'https://1fcaapr7lb4hwh4aihr5qcmziv.hop.clickbank.net',
+            type: 'Part-Time',
+            postDate: 'Posted 3 days ago'
+        },
+        {
+            id: 'static2',
+            title: 'Online Virtual Assistant',
+            company: {
+                name: 'Work at Home',
+                logo: 'https://home-jobs-directory.com/wp-content/uploads/2024/01/2500-online-data-entry-jobs-covers5.png'
+            },
+            location: 'Remote',
+            url: 'https://7115eoqfh51b2h50e253iw6ka7.hop.clickbank.net',
+            type: 'Contract',
+            postDate: 'Posted 1 week ago'
+        },
+        {
+            id: 'static3',
+            title: 'Assemble & Craft Jobs',
+            company: {
+                name: 'Work at Home',
+                logo: 'https://assemblecraftsjobs.com/wp-content/uploads/2021/09/assemblecraftsjobs_3Dcover.jpg'
+            },
+            location: 'Remote',
+            url: 'https://b9d43fn9m54i3c5ofy6qbrcm6w.hop.clickbank.net',
+            type: 'Contract',
+            postDate: 'Posted 3 days ago'
+        },
+        {
+            id: 'static4',
+            title: 'Remote Jobs Portal',
+            company: {
+                name: 'FlexJobs',
+                logo: 'https://app.impact.com/display-ad/20168-1847156?v=1'
+            },
+            location: 'Remote',
+            url: 'https://flexjobs.sjv.io/selfguru',
+            type: 'Full-Time',
+            postDate: 'Posted 2 weeks ago'
+        }
+    ];
 
     const fetchJobs = async () => {
         setLoading(true); // Start loading
@@ -42,6 +95,7 @@ const JobOpportunities = () => {
     const handleSearchSubmit = (e) => {
         e.preventDefault();
         fetchJobs();
+        setSearchPerformed(true);
     };
 
     return (
@@ -69,53 +123,27 @@ const JobOpportunities = () => {
                             </div>
                         ) : (
                             <div>
-                                <p className="text-center">
-                                    <span>{jobs.length}</span> jobs recommended for you
-                                </p>
-                                <Grid container spacing={2} style={{ padding: '20px' }}>
-                                    {jobs.map((job) => (
-                                        <Grid item xs={12} sm={6} key={job.id}>
-                                            <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                                                <CardActionArea component={Link} href={job.url} target="_blank">
-                                                    <Grid container alignItems="start">
-                                                        <Grid item xs={2}>
-                                                            <CardMedia
-                                                                component="img"
-                                                                sx={{
-                                                                    height: 50,
-                                                                    width: 'auto',
-                                                                    maxHeight: { xs: 40, sm: 50, md: 60 },
-                                                                    maxWidth: { xs: 'auto', sm: 'auto', md: 'auto' }
-                                                                }}
-                                                                image={job.company.logo}
-                                                                alt={job.company.name}
-                                                            />
-                                                        </Grid>
-                                                        <Grid item xs={10}>
-                                                            <CardContent>
-                                                                <Typography gutterBottom variant="h5" component="div">
-                                                                    {job.title}
-                                                                </Typography>
-                                                                <Typography variant="body2" color="text.secondary">
-                                                                    {job.company.name}
-                                                                </Typography>
-                                                                <Typography variant="body2" color="text.secondary">
-                                                                    Location: {job.location}
-                                                                </Typography>
-                                                                <Typography variant="body2" color="text.secondary">
-                                                                    Type: {job.type}
-                                                                </Typography>
-                                                                <Typography variant="body2" color="text.secondary">
-                                                                    Posted: {job.postDate}
-                                                                </Typography>
-                                                            </CardContent>
-                                                        </Grid>
-                                                    </Grid>
-                                                </CardActionArea>
-                                            </Card>
+                                {searchPerformed ? (
+                                    <>
+                                        <p className="text-center">
+                                            <span>{jobs.length}</span> jobs recommended for you
+                                        </p>
+                                        <Grid container spacing={2} style={{ padding: '20px' }}>
+                                            {jobs.map((job) => (
+                                                <JobCard job={job} key={job.id} />
+                                            ))}
                                         </Grid>
-                                    ))}
-                                </Grid>
+                                    </>
+                                ) : (
+                                    <>
+                                        <h4 className="text-center">Featured Jobs</h4>
+                                        <Grid container spacing={2} style={{ padding: '20px' }}>
+                                            {staticJobs.map((job) => (
+                                                <JobCard job={job} key={job.id} />
+                                            ))}
+                                        </Grid>
+                                    </>
+                                )}
                             </div>
                         )}
                     </div>
@@ -124,5 +152,53 @@ const JobOpportunities = () => {
         </section>
     );
 }
+
+const JobCard = ({ job }) => (
+    <Grid item xs={12} sm={6}>
+        <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+            <CardActionArea component={Link} href={job.url} target="_blank">
+                <Grid container alignItems="start">
+                    <Grid item xs={2} sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+                        <CardMedia
+                            component="img"
+                            sx={{
+                                height: 80,
+                                width: 'auto',
+                                maxHeight: { xs: 40, sm: 50, md: 60, lg: 90 },
+                                maxWidth: { xs: 'auto', sm: 'auto', md: 'auto' },
+                                borderRadius: '8px'
+                            }}
+                            image={job.company.logo}
+                            alt={job.company.name}
+                        />
+                    </Grid>
+                    <Grid item xs={10}>
+                        <CardContent>
+                            <Typography
+                                variant="body2"
+                                color="text.secondary"
+                                sx={{
+                                    fontWeight: 600,
+                                    color: 'green',
+                                }}>
+                                {job.company.name}
+                            </Typography>
+                            <Typography gutterBottom variant="h6" component="div">
+                                {job.title}
+                            </Typography>
+                            <Typography variant="body1" sx={{ display: 'flex' }}>
+                                <IoLocationOutline size={20} /> {job.location}
+                            </Typography>
+                            <Stack direction="row" spacing={1}>
+                                <Chip color="success" label={job.type} />
+                                <Chip color="primary" label={job.postDate} />
+                            </Stack>
+                        </CardContent>
+                    </Grid>
+                </Grid>
+            </CardActionArea>
+        </Card>
+    </Grid>
+);
 
 export default JobOpportunities;
