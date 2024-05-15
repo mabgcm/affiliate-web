@@ -112,7 +112,7 @@ const Account = () => {
                                                         <Link to={`/blogpost/${post.id}`}>
                                                             <span className="number">{index + 1}</span>
                                                             <h3 className='fontAlter'>{post.title}</h3>
-                                                            <span className="author blockquote-footer fontBase">{post.author}</span>
+                                                            {/* <span className="author blockquote-footer fontBase">{post.author}</span> */}
                                                         </Link>
                                                     </li>
                                                 ))}

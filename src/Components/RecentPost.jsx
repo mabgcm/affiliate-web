@@ -49,12 +49,12 @@ const RecentPost = () => {
                             <div className="mb-4 d-block" dangerouslySetInnerHTML={createMarkup(paragraphs[0].text)}></div>
                         </>
                     )}
-                    <div className="d-flex align-items-center author">
+                    {/* <div className="d-flex align-items-center author">
                         <div className="photo"><img src={profile} alt="" className="img-fluid" /></div>
                         <div className="name">
                             <h3 className="m-0 p-0 fontBase">{author}</h3>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             ))}
         </div>
