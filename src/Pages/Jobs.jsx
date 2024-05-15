@@ -58,6 +58,42 @@ const JobOpportunities = () => {
             url: 'https://flexjobs.sjv.io/selfguru',
             type: 'Full-Time',
             postDate: 'Posted 2 weeks ago'
+        },
+        {
+            id: 'static5',
+            title: 'E-mail Marketing',
+            company: {
+                name: 'Funnel Mates',
+                logo: 'https://lh3.googleusercontent.com/14rZYMC6_i_NL-ZDHaqMy9Uvrwy3Zm2Buf_KYK6CTNzCUoG7Iw8pVblqCaYgwhWY7am7Er0ivZP2wfW9qQ-V35lt_eTNZUjcHVEnFH8MHCVfGW5zsjGe8--LTkpfN0dEA53bW6pe'
+            },
+            location: 'Remote',
+            url: 'https://60466hnen83e1ct20mp7ydnpih.hop.clickbank.net/?cbpage=join',
+            type: 'Part-Time',
+            postDate: 'Posted 5 weeks ago'
+        },
+        {
+            id: 'static6',
+            title: 'Customer Support',
+            company: {
+                name: 'Live Chat Jobs',
+                logo: 'https://affiliatesstuff.s3.amazonaws.com/SSR/SSR%20-%20FB%20Ad%20Images/SSR%20FB%20Ad%20Image%201.png'
+            },
+            location: 'Remote',
+            url: 'https://b7201ppjh1zfyltjp2y6wmw50b.hop.clickbank.net',
+            type: 'Full-Time',
+            postDate: 'Posted 4 days ago'
+        },
+        {
+            id: 'static7',
+            title: 'Chat Support',
+            company: {
+                name: 'Facebook',
+                logo: 'https://assets.flagfamily.com/web/images/articles/meto-logo-1662552441.png'
+            },
+            location: 'Remote',
+            url: 'https://0bedfcmdjfyd19zgt2q7njp3jh.hop.clickbank.net',
+            type: 'Full-Time',
+            postDate: 'Posted 1 week ago'
         }
     ];
 
