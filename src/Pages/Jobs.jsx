@@ -88,7 +88,7 @@ const JobOpportunities = () => {
             title: 'Chat Support',
             company: {
                 name: 'Facebook',
-                logo: 'https://assets.flagfamily.com/web/images/articles/meto-logo-1662552441.png'
+                logo: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg'
             },
             location: 'Remote',
             url: 'https://0bedfcmdjfyd19zgt2q7njp3jh.hop.clickbank.net',
