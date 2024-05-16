@@ -21,7 +21,7 @@ const JobOpportunities = () => {
             location: 'Remote',
             url: 'https://1fcaapr7lb4hwh4aihr5qcmziv.hop.clickbank.net',
             type: 'Part-Time',
-            postDate: 'Posted 3 days ago'
+            postDate: '3 days ago'
         },
         {
             id: 'static2',
@@ -33,7 +33,7 @@ const JobOpportunities = () => {
             location: 'Remote',
             url: 'https://7115eoqfh51b2h50e253iw6ka7.hop.clickbank.net',
             type: 'Contract',
-            postDate: 'Posted 1 week ago'
+            postDate: '1 week ago'
         },
         {
             id: 'static3',
@@ -45,7 +45,7 @@ const JobOpportunities = () => {
             location: 'Remote',
             url: 'https://b9d43fn9m54i3c5ofy6qbrcm6w.hop.clickbank.net',
             type: 'Contract',
-            postDate: 'Posted 3 days ago'
+            postDate: '3 days ago'
         },
         {
             id: 'static4',
@@ -57,7 +57,7 @@ const JobOpportunities = () => {
             location: 'Remote',
             url: 'https://flexjobs.sjv.io/selfguru',
             type: 'Full-Time',
-            postDate: 'Posted 2 weeks ago'
+            postDate: '2 weeks ago'
         },
         {
             id: 'static5',
@@ -69,7 +69,7 @@ const JobOpportunities = () => {
             location: 'Remote',
             url: 'https://60466hnen83e1ct20mp7ydnpih.hop.clickbank.net/?cbpage=join',
             type: 'Part-Time',
-            postDate: 'Posted 5 weeks ago'
+            postDate: '5 weeks ago'
         },
         {
             id: 'static6',
@@ -81,7 +81,7 @@ const JobOpportunities = () => {
             location: 'Remote',
             url: 'https://b7201ppjh1zfyltjp2y6wmw50b.hop.clickbank.net',
             type: 'Full-Time',
-            postDate: 'Posted 4 days ago'
+            postDate: '4 days ago'
         },
         {
             id: 'static7',
@@ -93,7 +93,7 @@ const JobOpportunities = () => {
             location: 'Remote',
             url: 'https://0bedfcmdjfyd19zgt2q7njp3jh.hop.clickbank.net',
             type: 'Full-Time',
-            postDate: 'Posted 1 week ago'
+            postDate: '1 week ago'
         }
     ];
 
