@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { IoLocationOutline } from "react-icons/io5";
+import { MdOutlineSearch } from "react-icons/md";
 import { Grid, Card, CardContent, CardMedia, Typography, CardActionArea, Link, CircularProgress, Stack, Chip } from '@mui/material';
 import '../assets/css/home2.css';
 
@@ -141,16 +142,18 @@ const JobOpportunities = () => {
                 <div className="row">
                     <div className="col-lg-12">
                         <div style={{ display: 'flex', justifyContent: 'center' }}>
-                            <form onSubmit={handleSearchSubmit}>
+                            <form onSubmit={handleSearchSubmit} style={{ width: '100%', maxWidth: '600px', display: 'flex', alignItems: 'center', border: '1px solid #dfe1e5', borderRadius: '24px', padding: '5px 10px', boxShadow: '0 1px 6px rgba(32, 33, 36, 0.28)', marginBottom: '25px' }}>
                                 <input
                                     type="text"
                                     name="search"
                                     value={searchKeyword}
                                     onChange={handleSearchChange}
                                     placeholder="Enter search keyword"
-                                    style={{ width: '50%' }}
+                                    style={{ flex: 1, border: 'none', outline: 'none', fontSize: '16px', padding: '10px' }}
                                 />
-                                <button type="submit">Search</button>
+                                <button type="submit" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '10px' }}>
+                                    <MdOutlineSearch size={24} />
+                                </button>
                             </form>
                         </div>
                         {loading ? (
@@ -190,39 +193,48 @@ const JobOpportunities = () => {
 }
 
 const JobCard = ({ job }) => (
-    <Grid item xs={12} sm={6}>
+    <Grid item xs={12} sm={6} md={6} xxl={4}>
         <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
             <CardActionArea component={Link} href={job.url} target="_blank">
-                <Grid container alignItems="start">
-                    <Grid item xs={2} sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-                        <CardMedia
-                            component="img"
-                            sx={{
-                                height: 80,
-                                width: 'auto',
-                                maxHeight: { xs: 40, sm: 50, md: 60, lg: 90 },
-                                maxWidth: { xs: 'auto', sm: 'auto', md: 'auto' },
-                                borderRadius: '8px'
-                            }}
-                            image={job.company.logo}
-                            alt={job.company.name}
-                        />
-                    </Grid>
-                    <Grid item xs={10}>
-                        <CardContent>
-                            <Typography
-                                variant="body2"
-                                color="text.secondary"
+                <Grid container direction="column">
+                    <Grid item container alignItems="center">
+                        <Grid item xs={4} sx={{ display: 'flex', justifyContent: 'center' }}>
+                            <CardMedia
+                                component="img"
                                 sx={{
-                                    fontWeight: 600,
-                                    color: 'green',
-                                }}>
-                                {job.company.name}
-                            </Typography>
-                            <Typography gutterBottom variant="h6" component="div">
-                                {job.title}
-                            </Typography>
-                            <Typography variant="body1" sx={{ display: 'flex' }}>
+                                    height: 80,
+                                    width: 'auto',
+                                    maxHeight: { xs: 40, sm: 50, md: 60, lg: 90 },
+                                    maxWidth: { xs: 'auto', sm: 'auto', md: 'auto' },
+                                    borderRadius: '8px',
+                                    position: { xs: 'absolute', sm: 'absolute', md: 'relative' },
+                                    top: { xs: 0, sm: 0, md: 'auto' }
+                                }}
+                                image={job.company.logo}
+                                alt={job.company.name}
+                            />
+                        </Grid>
+                        <Grid item xs={8}>
+                            <CardContent sx={{ paddingLeft: 2 }}>
+                                <Typography
+                                    variant="body1"
+                                    color="text.secondary"
+                                    sx={{
+                                        fontSize: 17,
+                                        fontWeight: 600,
+                                        color: 'green',
+                                    }}>
+                                    {job.company.name}
+                                </Typography>
+                                <Typography gutterBottom variant="h6" component="div">
+                                    {job.title}
+                                </Typography>
+                            </CardContent>
+                        </Grid>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <CardContent>
+                            <Typography variant="body1" sx={{ display: 'flex', alignItems: 'center' }}>
                                 <IoLocationOutline size={20} /> {job.location}
                             </Typography>
                             <Stack direction="row" spacing={1}>
